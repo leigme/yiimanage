@@ -16,7 +16,7 @@ class WebBaseController extends BaseController {
 	 */
 	public function setPageTitle($value) {
 		
-		$name = Yii::app()->name ."|". $value;
+		$name = Yii::app()->name ." | ". $value;
 		
 		$this->pageTitle = '';
 
@@ -38,8 +38,8 @@ class WebBaseController extends BaseController {
 	}
 	
 	public function setSideBar() {
-		$arr = array('index'=>$this->getPath('web/default/index'), 
-				'add'=>$this->getPath('web/default/adduser'), );
+		$arr = array('index'=>$this->mCreateUrl('web/default/index'), 
+				'add'=>$this->mCreateUrl('web/default/adduser'), );
 		$this->urls = $arr;
 	}
 	
@@ -56,9 +56,9 @@ class WebBaseController extends BaseController {
 		$this->setSideBar();
 		
 		$this->urls = array(
-				'homePage'=>$this->getPath('web/admin/index'),
-				'findRecord'=>$this->getPath('web/admin/finduser'), 
-				'addPage'=>$this->getPath('web/adduser/index'),
+				'homePage'=>$this->mCreateUrl('web/admin/index'),
+				'findRecord'=>$this->mCreateUrl('web/admin/finduser'), 
+				'addPage'=>$this->mCreateUrl('web/adduser/index'),
 				
 		);
 		

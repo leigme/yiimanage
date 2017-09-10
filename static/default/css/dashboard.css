@@ -84,7 +84,9 @@ body {
   margin-top: 0;
 }
 
-.top { margin-bottom: 10px; }
+.topheader { margin-top: 50px; }
+
+.top { margin-bottom: 30px; }
 
 /*
  * Placeholder dashboard ideas

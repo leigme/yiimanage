@@ -2,8 +2,22 @@
 
 class BaseController extends Controller {
 	
-	public function getPath($path) {
-		return Yii::app()->createUrl($path);
+    /**
+     * 控制器地址
+     * 
+     * @param unknown $path
+     */
+	public function mCreateUrl($url) {
+		return Yii::app()->createUrl($url);
+	}
+	
+	/**
+	 * 链接地址
+	 * 
+	 * @param unknown $url
+	 */
+	public function mBaseUrl($url) {
+	    return Yii::app()->baseUrl.'/'.$url;
 	}
 	
 	/**

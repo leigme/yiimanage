@@ -3598,3 +3598,473 @@ REQUEST_URI=/yiimanage/web/adduser/index
 in /Users/leig/Program/workspacephp/yiimanage/protected/modules/web/views/admin/nav.php (14)
 in /Users/leig/Program/workspacephp/yiimanage/protected/modules/web/views/adduser/adduser.php (4)
 in /Users/leig/Program/workspacephp/yiimanage/protected/modules/web/controllers/AdduserController.php (17)
+2017/09/10 11:56:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 11:59:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:00:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:01:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:22:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:22:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:23:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:24:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:24:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:25:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:25:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:25:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:25:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:25:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:25:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:25:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:25:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:26:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:27:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:27:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:27:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:30:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:31:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:31:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:31:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:31:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:33:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:33:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:34:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:41:57 [error] [exception.CException] exception 'CException' with message 'AdminController and its behaviors do not have a method or closure named "getPath".' in D:\workspacephp\yiimanage\framework\base\CComponent.php:265
+Stack trace:
+#0 D:\workspacephp\yiimanage\protected\comm\WebBaseController.php(41): CComponent->__call('getPath', Array)
+#1 D:\workspacephp\yiimanage\protected\comm\WebBaseController.php(41): AdminController->getPath('web/default/ind...')
+#2 D:\workspacephp\yiimanage\protected\comm\WebBaseController.php(56): WebBaseController->setSideBar()
+#3 D:\workspacephp\yiimanage\framework\web\CController.php(306): WebBaseController->beforeAction(Object(CInlineAction))
+#4 D:\workspacephp\yiimanage\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\workspacephp\yiimanage\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('web/admin/index')
+#8 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/yiimanage/web/admin/index
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:42:29 [error] [exception.CException] exception 'CException' with message 'AdminController and its behaviors do not have a method or closure named "getPath".' in D:\workspacephp\yiimanage\framework\base\CComponent.php:265
+Stack trace:
+#0 D:\workspacephp\yiimanage\protected\comm\WebBaseController.php(41): CComponent->__call('getPath', Array)
+#1 D:\workspacephp\yiimanage\protected\comm\WebBaseController.php(41): AdminController->getPath('web/default/ind...')
+#2 D:\workspacephp\yiimanage\protected\comm\WebBaseController.php(56): WebBaseController->setSideBar()
+#3 D:\workspacephp\yiimanage\framework\web\CController.php(306): WebBaseController->beforeAction(Object(CInlineAction))
+#4 D:\workspacephp\yiimanage\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\workspacephp\yiimanage\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('web/admin/index')
+#8 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/yiimanage/web/admin/index
+HTTP_REFERER=http://localhost:8880/yiimanage/web/adduser/index
+---
+2017/09/10 12:43:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:46:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:47:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:48:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:49:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:51:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:52:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "details".' in D:\workspacephp\yiimanage\framework\web\CController.php:483
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CController.php(270): CController->missingAction('details')
+#1 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(282): CController->run('details')
+#2 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('web/admin/detai...')
+#3 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiimanage/web/admin/details
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:52:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:52:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "details".' in D:\workspacephp\yiimanage\framework\web\CController.php:483
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CController.php(270): CController->missingAction('details')
+#1 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(282): CController->run('details')
+#2 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('web/admin/detai...')
+#3 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiimanage/web/admin/details
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:52:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:52:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:52:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:54:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/10 12:55:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in D:\workspacephp\yiimanage\framework\web\CController.php:483
+Stack trace:
+#0 D:\workspacephp\yiimanage\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 D:\workspacephp\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('web/admin/favic...')
+#3 D:\workspacephp\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 D:\workspacephp\yiimanage\index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiimanage/web/admin/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/detail/id/2
+---

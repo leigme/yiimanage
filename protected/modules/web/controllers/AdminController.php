@@ -19,7 +19,7 @@ class AdminController extends WebBaseController {
 	
 		$title = Yii::app()->name.'|会员管理系统';
 	
-		$this->render('login', array('title'=>$title, 'path'=>$this->getPath('web/default/signin'), ));
+		$this->render('login', array('title'=>$title, 'path'=>$this->mCreateUrl('web/default/signin'), ));
 	}
 	
 	/**
@@ -61,6 +61,26 @@ class AdminController extends WebBaseController {
 				var_dump($username);
 				var_dump($password);
 	
-				$this->redirect($this->getPath('web/default/index'));
+				$this->redirect($this->mCreateUrl('web/default/index'));
+	}
+	
+	/**
+	 * 显示详情信息
+	 */
+	public function actionDetail() {
+	    
+	    // 获取参数
+	    $id = $this->getValue('id');
+	    
+	    // 参数验证
+	    if (!isset($id) || null === $id || '' === $id || empty($id)) {
+	        $result['errorFlag'] = true;
+	        $result['errorMsg'] = '记录编号不能为空';
+	        $result['errorCode'] = 'actionDetail-001';
+	        
+	        return json_encode(['json测试'=>'Hello World!']);
+	    }
+	    
+	    $this->render('details');
 	}
 }
