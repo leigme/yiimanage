@@ -28,7 +28,7 @@
                   <td>33</td>
                   <td>婚礼策划师</td>
                   <td>185731655050</td>
-                  <td><a href="<?php echo $this->mBaseUrl('web/admin/detail'); ?>">详情</a> / <a href="">修改</a> / <a href="">删除</a></td>
+                  <td><a href="<?php echo $this->mBaseUrl('web/admin/detail/id/'); ?>1001">详情</a> / <a href="">修改</a> / <a href="">删除</a></td>
                 </tr>
                 <tr>
                   <td>1,002</td>
