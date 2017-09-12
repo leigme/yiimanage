@@ -50,9 +50,6 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-	    'response' => [
-            'format' => 'json'
-        ],
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/manage.db',
 		),

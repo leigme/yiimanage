@@ -78,7 +78,8 @@ class AdminController extends WebBaseController {
 	        $result['errorMsg'] = '记录编号不能为空';
 	        $result['errorCode'] = 'actionDetail-001';
 	        
-	        return json_encode(['json测试'=>'Hello World!']);
+	        echo json_encode($result);
+	        return;
 	    }
 	    
 	    $this->render('details');
