@@ -41,7 +41,7 @@
 	    </table>
 
 		<label style="margin: 100px 0px 0px 0px">孩子资料</label>
-		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addPage']; ?>">添加孩子</a>
+		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addChild']; ?>">添加孩子</a>
 		
 		<table class="table table-striped" style="margin: 0px 0px 20px 0px">
 	      	<thead>
@@ -72,7 +72,7 @@
 	    </table>
 
 		<label style="margin: 100px 0px 0px 0px">跟进信息</label>
-		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addPage']; ?>">添加跟进</a>
+		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addUser']; ?>">添加跟进</a>
 
 		<table class="table table-striped">
               <thead>

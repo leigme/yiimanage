@@ -17,7 +17,7 @@ class AdminController extends WebBaseController {
 	
 		$this->setPageTitle('登录');
 	
-		$title = Yii::app()->name.'|会员管理系统';
+		$title = Yii::app()->name.'|客户管理系统';
 	
 		$this->render('login', array('title'=>$title, 'path'=>$this->mCreateUrl('web/default/signin'), ));
 	}
@@ -29,7 +29,7 @@ class AdminController extends WebBaseController {
 		
 		$this->setCSS('dashboard.css');
 		
-		$this->setPageTitle('会员列表');
+		$this->setPageTitle('客户列表');
 		
 		$this->active = 'index';
 		
