@@ -6,6 +6,8 @@
     <div class="container">
       <div class="row">
           <div class="table-responsive">
+            <label style="margin: 100px 0px 0px 0px">客户列表</label>
+            <a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addPage']; ?>">添加客户</a>
             <table class="table table-striped">
               <thead>
                 <tr>
