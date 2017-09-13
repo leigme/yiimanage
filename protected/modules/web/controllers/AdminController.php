@@ -31,7 +31,7 @@ class AdminController extends WebBaseController {
 		
 		$this->setPageTitle('客户列表');
 		
-		$this->active = 'index';
+		
 		
 		$this->render('index');
 	}
@@ -81,6 +81,8 @@ class AdminController extends WebBaseController {
 	        echo json_encode($result);
 	        return;
 	    }
+	    
+	    $this->setPageTitle('客户详情');
 	    
 	    $this->render('details');
 	}

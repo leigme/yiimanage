@@ -4890,3 +4890,53 @@ Stack trace:
 REQUEST_URI=/yiimanage/favicon.ico
 HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
 ---
+2017/09/13 10:33:28 [error] [exception.CException] exception 'CException' with message 'DefaultController and its behaviors do not have a method or closure named "getPath".' in D:\workspaces\php\yiimanage\framework\base\CComponent.php:265
+Stack trace:
+#0 D:\workspaces\php\yiimanage\protected\modules\web\controllers\DefaultController.php(49): CComponent->__call('getPath', Array)
+#1 D:\workspaces\php\yiimanage\protected\modules\web\controllers\DefaultController.php(49): DefaultController->getPath('web/default/add...')
+#2 D:\workspaces\php\yiimanage\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#3 D:\workspaces\php\yiimanage\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\workspaces\php\yiimanage\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\workspaces\php\yiimanage\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\workspaces\php\yiimanage\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\workspaces\php\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('web/default/ind...')
+#8 D:\workspaces\php\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\workspaces\php\yiimanage\index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/yiimanage/web/default/index
+---
+2017/09/13 10:34:26 [error] [exception.CException] exception 'CException' with message 'DefaultController and its behaviors do not have a method or closure named "getPath".' in D:\workspaces\php\yiimanage\framework\base\CComponent.php:265
+Stack trace:
+#0 D:\workspaces\php\yiimanage\protected\modules\web\controllers\DefaultController.php(49): CComponent->__call('getPath', Array)
+#1 D:\workspaces\php\yiimanage\protected\modules\web\controllers\DefaultController.php(49): DefaultController->getPath('web/default/add...')
+#2 D:\workspaces\php\yiimanage\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#3 D:\workspaces\php\yiimanage\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\workspaces\php\yiimanage\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\workspaces\php\yiimanage\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\workspaces\php\yiimanage\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\workspaces\php\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('web/default/ind...')
+#8 D:\workspaces\php\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\workspaces\php\yiimanage\index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/yiimanage/web/default/index
+---
+2017/09/13 10:34:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspaces\php\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspaces\php\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspaces\php\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspaces\php\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---
+2017/09/13 10:54:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in D:\workspaces\php\yiimanage\framework\web\CController.php:483
+Stack trace:
+#0 D:\workspaces\php\yiimanage\framework\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 D:\workspaces\php\yiimanage\framework\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 D:\workspaces\php\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('web/admin/favic...')
+#3 D:\workspaces\php\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 D:\workspaces\php\yiimanage\index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiimanage/web/admin/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/detail/id/1001
+---

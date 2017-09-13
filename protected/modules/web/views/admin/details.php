@@ -51,6 +51,7 @@
 	                  <th>年龄</th>
 	                  <th>性别</th>
 	                  <th>备注</th>
+	                  <th>操作</th>
 	                </tr>
 	              </thead>
 	      	<tbody>
@@ -60,6 +61,7 @@
 		          	<td>5岁</td>
 		          	<td>公主</td>
 		          	<td>喜欢冰雪奇缘</td>
+		          	<td><a href="">修改</a> / <a href="">删除</a></td>
 		        </tr>
 		        <tr>
 	          		<td>李明</td>
@@ -67,6 +69,7 @@
 		          	<td>4岁</td>
 		          	<td>王子</td>
 		          	<td>喜欢小猪佩奇</td>
+		          	<td><a href="">修改</a> / <a href="">删除</a></td>
 		        </tr>
 	      	</tbody>
 	    </table>
@@ -81,6 +84,7 @@
                   <th>跟进日期</th>
                   <th>跟进情况</th>
                   <th>备注</th>
+                  <th>操作</th>
                 </tr>
               </thead>
               <tbody>
@@ -88,6 +92,8 @@
                   <td>1,001</td>
                   <td>2017/9/1</td>
                   <td>派发传单时获取基本信息，有意向，愿意进一步了解</td>
+                  <td></td>
+                  <td><a href="">修改</a> / <a href="">删除</a></td>
                 </tr>
               </tbody>
         </table>

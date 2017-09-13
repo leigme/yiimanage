@@ -5,7 +5,7 @@
 
   <div class="container">
 
-<form class="form-inline">
+<form class="form-inline" action="<?php echo $this->mCreateUrl('web/userinfo/adduser'); ?>">
 
         <div class="row topheader">
 

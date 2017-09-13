@@ -27,6 +27,8 @@ class UserInfoController extends WebBaseController {
 	 * 添加用户操作
 	 */
 	public function actionAddUser() {
+
+		$this->redirect($this->urls['addUser']);
 		
 	}
 	
@@ -44,7 +46,13 @@ class UserInfoController extends WebBaseController {
 	/**
 	 * 删除用户操作
 	 */
-	public function actionDelUser() {}
+	public function actionDelUser() {
+		
+		$this->redirect($this->urls['homePage']);
+		
+	}
 	
-	public function actionDelChild() {}
+	public function actionDelChild() {
+		
+	}
 }
