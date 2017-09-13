@@ -4940,3 +4940,12 @@ Stack trace:
 REQUEST_URI=/yiimanage/web/admin/favicon.ico
 HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/detail/id/1001
 ---
+2017/09/13 17:47:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in D:\workspaces\php\yiimanage\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\workspaces\php\yiimanage\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\workspaces\php\yiimanage\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\workspaces\php\yiimanage\index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiimanage/favicon.ico
+HTTP_REFERER=http://localhost:8880/yiimanage/web/admin/index
+---

@@ -31,7 +31,25 @@ class AdminController extends WebBaseController {
 		
 		$this->setPageTitle('客户列表');
 		
+		$pageNum = $this->getValue('pageNum');
 		
+		$pageSize = $this->getValue('pageSize');
+		
+		if (!isset($pageNum) || !isset($pageSize)
+				|| empty($pageNum) || empty($pageSize)
+				|| 0 >= $pageNum || 0 >= $pageSize) {
+			$pageNum = 1;
+			$pageSize = 10;
+		}
+		
+		$userInfoDao = new UserinfoDao();
+		
+		$result = $userInfoDao->getUserInfoList($pageNum, $pageSize);
+		
+		if (isset($result) && !empty($result) && STATUS_OK === $result['resStatus']) {
+			$this->render('index', array('resultData'=>$result,));
+			return;
+		}
 		
 		$this->render('index');
 	}
@@ -55,7 +73,8 @@ class AdminController extends WebBaseController {
 					$result['errorFlag'] = true;
 					$result['errorMsg'] = '用户名或密码不能为空';
 					$result['errorCode'] = 'actionSignin-001';
-					return $result;
+					echo json_encode($result);
+					return;
 				}
 	
 				var_dump($username);
