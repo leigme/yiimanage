@@ -5,132 +5,160 @@
 
   <div class="container">
 
-<form class="form-inline" action="<?php echo $this->mCreateUrl('web/userinfo/adduser'); ?>">
+    <form class="form-inline" action="<?php echo $this->mCreateUrl('web/userinfo/adduser'); ?>">
 
-        <div class="row topheader">
+      <div class="row topheader">
 
-          <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
 
-          <div class="col-md-8">
-            <div class="row top">
-              <div class="col-md-6">
-               <div class="form-group">
-                 <label for="exampleInputName2">姓名</label>
-                 <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入用户姓名">
-               </div>
-             </div>
-
-             <div class="col-md-6">
-
-              <div class="form-group">
-                <label for="exampleInputName2">性别</label>
-                <select class="form-control">
-                  <option>选择</option>
-                  <option>男</option>
-                  <option>女</option>
-                </select>
-              </div>
-            </div>
-          </div><!--row 1 end-->
-
+        <div class="col-md-8">
           <div class="row top">
-
-           <div class="col-md-6">
+            <div class="col-md-6">
              <div class="form-group">
-              <label for="exampleInputName2">微信</label>
-              <input type="text" class="form-control" id="exampleInputName2" placeholder="weixin">
-            </div>
-          </div>
-          <div class="col-md-6">
-
-           <div class="form-group">
-             <label for="exampleInputName2">价格敏感度</label>
-             <select class="form-control">
-               <option>选择</option>
-               <option>低</option>
-               <option>中</option>
-               <option>高</option>
-             </select>
+               <label for="exampleInputName2">姓名</label>
+               <input name="realname" id="realname" type="text" class="form-control" id="exampleInputName2" placeholder="请输入用户姓名">
+             </div>
            </div>
 
+           <div class="col-md-6">
 
-         </div>
+            <div class="form-group">
+              <label for="exampleInputName2">性别</label>
+              <select name="sex" id="sex" class="form-control">
+                <option>选择</option>
+                <option value="2">男</option>
+                <option value="4">女</option>
+              </select>
+            </div>
+          </div>
+        </div><!--row 1 end-->
 
-       </div><!--row 2 end-->
-
-       <div class="row top">
+        <div class="row top">
 
          <div class="col-md-6">
            <div class="form-group">
-            <label for="exampleInputEmail2">电话</label>
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="18888888888">
+            <label for="exampleInputName2">微信</label>
+            <input name="weixin" id="weixin" type="text" class="form-control" id="exampleInputName2" placeholder="weixin">
           </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="exampleInputName2">年龄</label>
-            <input type="text" class="form-control" id="exampleInputName2" placeholder="18">
-          </div>
 
-        </div>
+         <div class="form-group">
+           <label for="exampleInputName2">价格敏感度</label>
+           <select name="price" id="price" class="form-control">
+             <option>选择</option>
+             <option value="2">低</option>
+             <option value="4">中</option>
+             <option value="8">高</option>
+           </select>
+         </div>
 
-      </div><!--row 3 end-->
-      
-      <div class="row top">
 
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="exampleInputName2">邮件</label>
-            <input type="text" class="form-control" id="exampleInputName2" placeholder="example@example.com">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="exampleInputName2">职业</label>
-            <input type="text" class="form-control" id="exampleInputName2" placeholder="老板">
-          </div>
+       </div>
 
-        </div>
+     </div><!--row 2 end-->
 
-      </div><!--row 4 end-->
-      
-      <div class="row top">
+     <div class="row top">
 
        <div class="col-md-6">
-        <div class="form-group">
-          <label for="exampleInputName2">来源</label>
-          <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+         <div class="form-group">
+          <label for="exampleInputEmail2">电话</label>
+          <input name="telephone" id="telephone" type="text" class="form-control" id="exampleInputEmail2" placeholder="18888888888">
         </div>
       </div>
       <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleInputName2">年龄</label>
+          <input name="age" id="age" type="text" class="form-control" id="exampleInputName2" placeholder="18">
+        </div>
 
       </div>
 
-    </div><!--row 5 end-->
-    
+    </div><!--row 3 end-->
+
     <div class="row top">
 
-     <div class="col-md-12">
-       <label for="exampleInputName2">备注</label>
-       <textarea class="form-control" rows="3" cols="80"></textarea>
-     </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleInputName2">邮件</label>
+          <input  name="email" id="email" type="email" class="form-control" id="exampleInputName2" placeholder="example@example.com">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleInputName2">职业</label>
+          <input name="career" id="career" type="text" class="form-control" id="exampleInputName2" placeholder="老板">
+        </div>
 
-   </div><!--row 6 end-->
-   
-   <div class="row top">
+      </div>
 
-     <div class="col-md-6"></div>
+    </div><!--row 4 end-->
+
+    <div class="row top">
+
      <div class="col-md-6">
-      <button type="submit" class="btn btn-primary">提 交</button>
-      <button type="submit" class="btn btn-default">取 消</button>
+      <div class="form-group">
+        <label for="exampleInputName2">来源</label>
+        <input name="come" id="come" type="text" class="form-control" id="exampleInputName2" placeholder="">
+      </div>
     </div>
-  </div><!--row 7 end-->
-  
+    <div class="col-md-6">
+
+    </div>
+
+  </div><!--row 5 end-->
+
+  <div class="row top">
+
+   <div class="col-md-12">
+     <label for="exampleInputName2">备注</label>
+     <textarea name="remark" id="remark" class="form-control" rows="3" cols="80"></textarea>
+   </div>
+
+ </div><!--row 6 end-->
+
+ <div class="row top">
+
+   <div class="col-md-6"></div>
+   <div class="col-md-6">
+    <button type="button" class="btn btn-primary" onclick="myClick()">提 交</button>
+    <button type="submit" class="btn btn-default">取 消</button>
+  </div>
+</div><!--row 7 end-->
+
 </div><!-- col-md-8 end-->
 <div class="col-md-2"></div>
 </div>
 </form>
 </div>
+<script type="text/javascript">
+  function myClick() {
+    var reg = new RegExp("^[0-9]*$");
+    $realname = $('#realname').val();
+    if (null == $realname  || undefined == $realname || '' == $realname) {
+      alert('客户姓名不能为空!');
+      return;
+    }
+    $sex = $('#sex').val();    
+    $weixin = $('#weixin').val();
+    $price = $('#price').val();
+    $telephone = $('#telephone').val();
+    if (reg.test($telephone) {
+        alert('电话号码只能是数字');
+        return;
+    }
+    $age = $('#age').val();
+      if ('number' !=typeof($telephone)) {
+        alert('年龄只能是数字');
+        return;
+    }
+    $email = $('#email').val();
+    $career = $('#career').val();
+    $come = $('#come').val();
+    $remark = $('#remark').val();
+    alert('-=-');
+  }
+</script>
 </body>
 
 

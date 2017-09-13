@@ -80,7 +80,7 @@ class AdminController extends WebBaseController {
 				var_dump($username);
 				var_dump($password);
 	
-				$this->redirect($this->mCreateUrl('web/default/index'));
+				$this->redirect($this->mCreateUrl('web/admin/index'));
 	}
 	
 	/**

@@ -28,6 +28,16 @@ class UserInfoController extends WebBaseController {
 	 */
 	public function actionAddUser() {
 
+		$realname = $this->getValue('realname');
+		$this->getValue('realname');
+		$this->getValue('realname');
+		$this->getValue('realname');
+		$this->getValue('realname');
+		$this->getValue('realname');
+		$this->getValue('realname');
+		$this->getValue('realname');
+		
+		
 		$this->redirect($this->urls['addUser']);
 		
 	}
