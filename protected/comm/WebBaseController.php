@@ -58,7 +58,8 @@ class WebBaseController extends BaseController {
 		$this->urls = array(
 				'homePage'=>$this->mCreateUrl('web/admin/index'),
 				'findRecord'=>$this->mCreateUrl('web/admin/finduser'), 
-				'addPage'=>$this->mCreateUrl('web/adduser/index'),
+				'addUser'=>$this->mCreateUrl('web/userinfo/index'),
+		        'addChild'=>$this->mCreateUrl('web/userinfo/child'),
 				
 		);
 		
