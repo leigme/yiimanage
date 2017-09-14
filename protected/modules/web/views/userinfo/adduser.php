@@ -143,12 +143,12 @@
     $weixin = $('#weixin').val();
     $price = $('#price').val();
     $telephone = $('#telephone').val();
-    if (reg.test($telephone) {
+    if (isNaN($telephone)) {
         alert('电话号码只能是数字');
         return;
     }
     $age = $('#age').val();
-      if ('number' !=typeof($telephone)) {
+      if (isNaN($age)) {
         alert('年龄只能是数字');
         return;
     }
@@ -156,7 +156,7 @@
     $career = $('#career').val();
     $come = $('#come').val();
     $remark = $('#remark').val();
-    alert('-=-');
+    
   }
 </script>
 </body>
