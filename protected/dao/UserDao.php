@@ -41,6 +41,48 @@ class UserDao extends BaseDao {
 		return STATUS_NG;
 	}
 	
+	public function verifyUser($username, $password) {
+		// 参数判断
+		if (!isset($username) || empty($username) || null === $username || '' === $username 
+				|| !isset($password) || empty($password) || null === $password || '' === $password) {
+			return STATUS_NG;
+		}
+		
+		$sql = "t1.id, t1.username, t1.password ";
+		
+		$user = User::model();
+		$criteria = new CDbCriteria();
+		
+		$criteria->select = $sql;
+		$criteria->alias = 't1';
+		
+		$criteria->addCondition('t1.username = :p1');
+		$conditionParams[':p1'] = $username;
+		
+		$criteria->addCondition('t1.deleteflag = :p2');
+		$conditionParams[':p2'] = DELFLAG_NORMAL;
+		
+		$criteria->params = $conditionParams;
+		
+		$resModelData = $user->find($criteria);
+		
+		if (!isset($resModelData) || empty($resModelData) || null === $resModelData) {
+			return STATUS_NG;
+		}
+		
+		$resultData = array();
+		
+		foreach ($resModelData as $key=>$value) {
+			$resultData[$key]=$value;
+		}
+		
+		if (strcmp($password, $resultData['password'])) {
+			return STATUS_OK;
+		}
+		
+		return STATUS_NG;
+	}
+	
 	/**
 	 * 通过分页条件获取记录集合
 	 *

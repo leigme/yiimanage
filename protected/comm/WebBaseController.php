@@ -45,7 +45,8 @@ class WebBaseController extends BaseController {
 		$this->setTheme();
 		
 		$this->urls = array(
-				'loginPage'=>$this->mCreateUrl('web/admin/signin'),
+				'loginPage'=>$this->mCreateUrl('web/admin/login'),
+				'login'=>$this->mCreateUrl('web/admin/signin'),
 				'homePage'=>$this->mCreateUrl('web/admin/index'),
 				'findRecord'=>$this->mCreateUrl('web/admin/finduser'),
 				'addUserPage'=>$this->mCreateUrl('web/userinfo/index'),

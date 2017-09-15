@@ -19,7 +19,7 @@ class AdminController extends WebBaseController {
 	
 		$title = Yii::app()->name.'|客户管理系统';
 	
-		$this->render('login', array('title'=>$title, 'path'=>$this->mCreateUrl('web/default/signin'), ));
+		$this->render('login', array('title'=>$title, ));
 	}
 	
 	/**
@@ -92,10 +92,16 @@ class AdminController extends WebBaseController {
 					return;
 				}
 	
-				var_dump($username);
-				var_dump($password);
+				$userDao = new UserDao();
+				
+				$result = $userDao->verifyUser($username, $password);
+				
+				if (STATUS_OK === $result) {
+					$this->redirect($this->urls['homePage']);
+					return;
+				}
 	
-				$this->redirect($this->mCreateUrl('web/admin/index'));
+				$this->redirect($this->urls['loginPage']);
 	}
 	
 	/**

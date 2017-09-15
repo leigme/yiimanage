@@ -38,7 +38,7 @@ class UserInfoDao extends BaseDao {
 		
 		// 插入操作
 		$result = $userInfo->save();
-		var_dump($userInfo->getErrors());
+		
 		if($result){
 			$Id = Yii::app()->db->getLastInsertID();
 			return $Id;
