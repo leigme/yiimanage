@@ -27,18 +27,40 @@ class UserInfoController extends WebBaseController {
 	 * 添加用户操作
 	 */
 	public function actionAddUser() {
-
+		
 		$realname = $this->getValue('realname');
-		$this->getValue('realname');
-		$this->getValue('realname');
-		$this->getValue('realname');
-		$this->getValue('realname');
-		$this->getValue('realname');
-		$this->getValue('realname');
-		$this->getValue('realname');
+		if (!isset($realname) || empty($realname) || null === $realname || '' === $realname) {
+			$this->redirect($this->urls['homePage']);
+			return;
+		}
+		$weixin = $this->getValue('weixin');
+		$telephone = $this->getValue('telephone');
+		$email = $this->getValue('email');
+		$come = $this->getValue('come');
+		$remark = $this->getValue('remark');
+		$sex = $this->getValue('sex');
+		$price = $this->getValue('price');
+		$age = $this->getValue('age');
+		$career = $this->getValue('career');
 		
+		$userInfo = new Userinfo();
+
+		$userInfo->realname = $realname;
+		$userInfo->weixinnum = $weixin;
+		$userInfo->telephonenum = $telephone;
+		$userInfo->email = $email;
+		$userInfo->come = $come;
+		$userInfo->remark = $remark;
+		$userInfo->sex = (int)$sex;
+		$userInfo->pricelevel = (int)$price;
+		$userInfo->age = $age;
+		$userInfo->career = $career;
+
+		$userInfoDao = new UserInfoDao();
+
+		$result = $userInfoDao->addUserInfo($userInfo);
 		
-		$this->redirect($this->urls['addUser']);
+		$this->redirect($this->urls['homePage']);
 		
 	}
 	

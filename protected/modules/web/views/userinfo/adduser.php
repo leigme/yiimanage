@@ -5,7 +5,7 @@
 
   <div class="container">
 
-    <form class="form-inline" action="<?php echo $this->mCreateUrl('web/userinfo/adduser'); ?>">
+    <form class="form-inline" id="myForm" action="<?php echo $this->urls['addUser']; ?>" method="POST">
 
       <div class="row topheader">
 
@@ -25,7 +25,7 @@
             <div class="form-group">
               <label for="exampleInputName2">性别</label>
               <select name="sex" id="sex" class="form-control">
-                <option>选择</option>
+                <option value="-1">选择</option>
                 <option value="2">男</option>
                 <option value="4">女</option>
               </select>
@@ -46,7 +46,7 @@
          <div class="form-group">
            <label for="exampleInputName2">价格敏感度</label>
            <select name="price" id="price" class="form-control">
-             <option>选择</option>
+             <option value="-1">选择</option>
              <option value="2">低</option>
              <option value="4">中</option>
              <option value="8">高</option>
@@ -132,31 +132,65 @@
 </form>
 </div>
 <script type="text/javascript">
+
   function myClick() {
-    var reg = new RegExp("^[0-9]*$");
-    $realname = $('#realname').val();
-    if (null == $realname  || undefined == $realname || '' == $realname) {
+
+  	var emailReg = /^[a-zA-Z0-9_\-]{1,}@[a-zA-Z0-9_\-]{1,}\.[a-zA-Z0-9_\-.]{1,}$/;
+  	
+    var realname = $('#realname').val();
+    if (null == realname  || undefined == realname || '' == realname) {
       alert('客户姓名不能为空!');
       return;
     }
-    $sex = $('#sex').val();    
-    $weixin = $('#weixin').val();
-    $price = $('#price').val();
-    $telephone = $('#telephone').val();
-    if (isNaN($telephone)) {
+
+    var sex = $('#sex').val();
+
+    if (-1 == sex) {
+      alert('请选择性别');
+      return;
+    }
+    
+    var weixin = $('#weixin').val();
+    
+    var price = $('#price').val();
+    
+    if (-1 == price) {
+      alert('请选择价格敏感度');
+      return;
+    }
+    
+    var telephone = $('#telephone').val();
+
+    if (null != telephone && undefined != telephone && '' != telephone) {
+      if (isNaN(telephone)) {
         alert('电话号码只能是数字');
         return;
+      }
     }
-    $age = $('#age').val();
-      if (isNaN($age)) {
-        alert('年龄只能是数字');
-        return;
-    }
-    $email = $('#email').val();
-    $career = $('#career').val();
-    $come = $('#come').val();
-    $remark = $('#remark').val();
+
     
+    var age = $('#age').val();
+
+    if (isNaN(age)) {
+      alert('年龄只能是数字');
+      return;
+    }
+      
+    var email = $('#email').val();
+
+    if (null != email && undefined != email && '' != email) {
+      if (!emailReg.test(email)) {
+        alert('请输入正确的邮箱格式');
+        return;
+      }
+    }
+    
+    var career = $('#career').val();
+    var come = $('#come').val();
+    var remark = $('#remark').val();
+
+    $('#myForm').submit();
+
   }
 </script>
 </body>

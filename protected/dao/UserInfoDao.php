@@ -29,15 +29,17 @@ class UserInfoDao extends BaseDao {
 		}
 		
 		// 参数初始化设置
-		$userInfo->CreateTime = date('Y-m-d H:i:s', time());
-		$userInfo->UpdateTime = date('Y-m-d H:i:s', time());
+		$userInfo->createtime = date('Y-m-d H:i:s', time());
+		$userInfo->updatetime = date('Y-m-d H:i:s', time());
 
 		$userInfo->deleteflag = DELFLAG_NORMAL;
 		
-		// 插入操作
-		$userInfo = $userInfo->save();
+		var_dump($userInfo->isNewRecord);
 		
-		if($userInfo){
+		// 插入操作
+		$result = $userInfo->save();
+		var_dump($userInfo->getErrors());
+		if($result){
 			$Id = Yii::app()->db->getLastInsertID();
 			return $Id;
 		}
@@ -220,7 +222,7 @@ class UserInfoDao extends BaseDao {
 		if(isset($userInfo->updatetime) && '' !== $userInfo->updatetime) {
 			$userInfoModel->updatetime = $userInfo->updatetime;
 		} else {
-			$userInfoModel->UpdateTime = date('Y-m-d H:i:s', time());
+			$userInfoModel->updatetime = date('Y-m-d H:i:s', time());
 		}
 		
 		if(isset($userInfo->deleteflag) && '' !== $userInfo->deleteflag) {

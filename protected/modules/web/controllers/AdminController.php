@@ -47,7 +47,22 @@ class AdminController extends WebBaseController {
 		$result = $userInfoDao->getUserInfoList($pageNum, $pageSize);
 		
 		if (isset($result) && !empty($result) && STATUS_OK === $result['resStatus']) {
-			$this->render('index', array('resultData'=>$result,));
+			
+			for ($i = 0; $i < count($result['resArray']); $i++ ) {
+				switch ($result['resArray'][$i]['sex']) {
+					case SEX_KEY_MALE:
+						$result['resArray'][$i]['sex'] = '男';
+						break;
+					case SEX__KEY_FEMALE:
+						$result['resArray'][$i]['sex'] = '女';
+						break;
+					default:
+						$result['resArray'][$i]['sex'] = '无';
+						break;
+				}
+			}
+			
+			$this->render('index', array('resultData'=>$result, ));
 			return;
 		}
 		

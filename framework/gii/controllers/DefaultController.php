@@ -33,6 +33,7 @@ class DefaultController extends CController
 	 */
 	public function actionLogin()
 	{
+
 		$model=Yii::createComponent('gii.models.LoginForm');
 
 		// collect user input data

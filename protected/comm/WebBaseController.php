@@ -4,10 +4,6 @@ class WebBaseController extends BaseController {
 	
 	public $urls = array();
 	
-	public $active = 'index';
-	
-	public $page;
-	
 	/**
 	 * 设置页面标题
 	 *
@@ -37,12 +33,6 @@ class WebBaseController extends BaseController {
 		$this->layout = "//default/index";
 	}
 	
-	public function setSideBar() {
-		$arr = array('index'=>$this->mCreateUrl('web/default/index'), 
-				'add'=>$this->mCreateUrl('web/default/adduser'), );
-		$this->urls = $arr;
-	}
-	
 	/**
 	 * 初始化方法
 	 *
@@ -53,15 +43,15 @@ class WebBaseController extends BaseController {
 		
 		$this->setBootstrap();
 		$this->setTheme();
-		$this->setSideBar();
 		
 		$this->urls = array(
-				'homePage'=>$this->mCreateUrl('web/admin/index'),
 				'loginPage'=>$this->mCreateUrl('web/admin/signin'),
-				'findRecord'=>$this->mCreateUrl('web/admin/finduser'), 
-				'addUser'=>$this->mCreateUrl('web/userinfo/index'),
-		        'addChild'=>$this->mCreateUrl('web/userinfo/child'),
-				
+				'homePage'=>$this->mCreateUrl('web/admin/index'),
+				'findRecord'=>$this->mCreateUrl('web/admin/finduser'),
+				'addUserPage'=>$this->mCreateUrl('web/userinfo/index'),
+		        'addChildPage'=>$this->mCreateUrl('web/userinfo/child'),
+				'addUser'=>$this->mCreateUrl('web/userinfo/adduser'),
+				'detailPage'=>$this->mCreateUrl('web/admin/detail'),
 		);
 		
 		return true;
