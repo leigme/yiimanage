@@ -31,16 +31,13 @@ class AdminController extends WebBaseController {
 		
 		$this->setPageTitle('客户列表');
 		
-		$pageNum = $this->getValue('pageNum');
-		
-		$pageSize = $this->getValue('pageSize');
-		
-		if (!isset($pageNum) || !isset($pageSize)
-				|| empty($pageNum) || empty($pageSize)
-				|| 0 >= $pageNum || 0 >= $pageSize) {
-			$pageNum = 1;
-			$pageSize = 10;
+		$pageNum = $this->getValue('page');
+
+		if (!isset($pageNum) || empty($pageNum) || 0 >= $pageNum ) {
+			$pageNum = 0;
 		}
+		
+		$pageSize = PAGE_SIZE;
 		
 		$userInfoDao = new UserinfoDao();
 		
@@ -61,12 +58,9 @@ class AdminController extends WebBaseController {
 						break;
 				}
 			}
-			
-			$this->render('index', array('resultData'=>$result, ));
-			return;
 		}
 		
-		$this->render('index');
+		$this->render('index', array('resultData'=>$result, ));
 	}
 	
 	function actionFindUser() {

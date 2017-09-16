@@ -39,9 +39,9 @@
                 <div class="form-group">
                 <label for="exampleInputName2">性别</label>
                 <select class="form-control">
-                  <option>选择</option>
-                  <option>王子</option>
-                  <option>公主</option>
+                  <option value="-1">选择</option>
+                  <option value="2">王子</option>
+                  <option value="4">公主</option>
                 </select>
               </div>
           </div>
