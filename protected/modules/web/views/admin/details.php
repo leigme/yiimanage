@@ -9,41 +9,41 @@
 	      	<tbody>
 		        <tr>
 	          		<td>客户名称</td>
-		          	<td>王蓓</td>
+		          	<td><?php echo $userInfo['realname']; ?></td>
 		          	<td>性别</td>
-		          	<td>女</td>
+		          	<td><?php echo $userInfo['sex']; ?></td>
 		        </tr>
 		        <tr>
 	          		<td>微信</td>
-		          	<td>tianxinmamiwb</td>
+		          	<td><?php echo $userInfo['weixinnum']; ?></td>
 		          	<td>电话</td>
-		          	<td>18573165050</td>
+		          	<td><?php echo $userInfo['telephonenum']; ?></td>
 		        </tr>
 		        <tr>
 	          		<td>年龄</td>
-		          	<td>33</td>
+		          	<td><?php echo $userInfo['age']; ?></td>
 		          	<td>职业</td>
-		          	<td>婚礼策划师</td>
+		          	<td><?php echo $userInfo['career']; ?></td>
 		        </tr>
 		        <tr>
 	          		<td>电子邮件</td>
-		          	<td></td>
+		          	<td><?php echo $userInfo['email']; ?></td>
 		          	<td>备注</td>
-		          	<td>女儿 四岁 喜欢冰雪奇缘</td>
+		          	<td><?php echo $userInfo['remark']; ?></td>
 		        </tr>
 		        <tr>
 	          		<td>客户来源</td>
-		          	<td>传单</td>
+		          	<td><?php echo $userInfo['come']; ?></td>
 		          	<td>价格敏感度</td>
-		          	<td>低</td>
+		          	<td><?php echo $userInfo['pricelevel']; ?></td>
 		        </tr>
 	      	</tbody>
 	    </table>
 
-		<label style="margin: 100px 0px 0px 0px">孩子资料</label>
-		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addChildPage']; ?>">添加孩子</a>
+		<label style="margin: 50px 0px 0px 0px">孩子资料</label>
+		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addChildPage'].'/id/'.$userId; ?>">添加孩子</a>
 		
-		<table class="table table-striped" style="margin: 0px 0px 20px 0px">
+		<table class="table table-striped">
 	      	<thead>
 	                <tr>
 	                  <th>姓名</th>
@@ -54,28 +54,29 @@
 	                  <th>操作</th>
 	                </tr>
 	              </thead>
+
+			<?php 
+				if (STATUS_NG != $childInfos) {
+					foreach ($childInfos as $childInfo) {
+			?>
 	      	<tbody>
 		        <tr>
-	          		<td>李贝贝</td>
-		          	<td>2012-08-08</td>
-		          	<td>5岁</td>
-		          	<td>公主</td>
-		          	<td>喜欢冰雪奇缘</td>
-		          	<td><a href="">修改</a> / <a href="">删除</a></td>
-		        </tr>
-		        <tr>
-	          		<td>李明</td>
-		          	<td>2013-08-08</td>
-		          	<td>4岁</td>
-		          	<td>王子</td>
-		          	<td>喜欢小猪佩奇</td>
+	          		<td><?php echo $childInfo['realname']; ?></td>
+		          	<td><?php echo $childInfo['birthday']; ?></td>
+		          	<td><?php echo $childInfo['age']; ?></td>
+		          	<td><?php echo $childInfo['sex']; ?></td>
+		          	<td><?php echo $childInfo['remark']; ?></td>
 		          	<td><a href="">修改</a> / <a href="">删除</a></td>
 		        </tr>
 	      	</tbody>
-	    </table>
+			<?php
+					}
+				}
+			 ?>
+		</table>
 
-		<label style="margin: 100px 0px 0px 0px">跟进信息</label>
-		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addUser']; ?>">添加跟进</a>
+		<label style="margin: 50px 0px 0px 0px">跟进信息</label>
+		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['addFollowPage'].'/id/'.$userId; ?>">添加跟进</a>
 
 		<table class="table table-striped">
               <thead>
@@ -88,15 +89,39 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>2017/9/1</td>
-                  <td>派发传单时获取基本信息，有意向，愿意进一步了解</td>
-                  <td></td>
-                  <td><a href="">修改</a> / <a href="">删除</a></td>
+              	<?php 
+              		if (STATUS_NG != $followsData) {
+              			foreach ($followsData as $followData) {
+              	?>
+              	<tr>
+                  <td><?php echo $followData['id']; ?></td>
+                  <td><?php echo $followData['followtime']; ?></td>
+                  <td><?php echo $followData['context']; ?></td>
+                  <td><?php echo $followData['remark']; ?></td>
+                  <td><a href="<?php echo $this->urls['upFollowPage'].'/id/'.$userId.'/followId/'.$followData['id']; ?>">修改</a> / <a href="">删除</a></td>
                 </tr>
+              	<?php
+              			}
+              		}
+              	?>
               </tbody>
         </table>
+        		<?php
+                  $this->widget('CLinkPager', array('pages'=>$pages['pages'], 
+                    'header'=>false,  
+                    'htmlOptions'=>array('class'=>'pagination pull-right'),  
+                    'selectedPageCssClass' => 'active',  
+                    'hiddenPageCssClass' => 'disabled',  
+                    'firstPageLabel'=>'首页',  
+                    'lastPageLabel'=>'尾页',  
+                    'prevPageLabel'=>'«',  
+                    'nextPageLabel'=>'»',  
+                    'maxButtonCount'=>5,  
+                    'cssFile'=>false,  
+                    'firstPageCssClass'=>'previous',  
+                    'lastPageCssClass'=>'next', 
+                  ));
+                ?>
 	</div>
 </body>
 

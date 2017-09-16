@@ -34,18 +34,73 @@ class UserInfoDao extends BaseDao {
 
 		$userInfo->deleteflag = DELFLAG_NORMAL;
 		
-		var_dump($userInfo->isNewRecord);
-		
 		// 插入操作
 		$result = $userInfo->save();
 		
 		if($result){
-			$Id = Yii::app()->db->getLastInsertID();
-			return $Id;
+			$id = Yii::app()->db->getLastInsertID();
+			return $id;
 		}
 
 		return STATUS_NG;
 	}
+	
+	
+	public function selectUserInfo($id) {
+		// 参数判断
+		if (!isset($id) || empty($id) || 0 >= $id) {
+			return STATUS_NG;
+		}
+	
+		$sql = 't1.id,
+				t1.createby,
+				t1.realname,
+				t1.birthday,
+				t1.sex,
+				t1.age,
+				t1.career,
+				t1.remark,
+				t1.come,
+				t1.pricelevel,
+				t1.email,
+				t1.telephonenum,
+				t1.weixinnum,
+				t1.qqnum,
+				t1.sinanum,
+				t1.createtime,
+				t1.updatetime,
+				t1.deletetime ';
+	
+		$userInfo = Userinfo::model();
+		$criteria = new CDbCriteria();
+	
+		$criteria->select = $sql;
+		$criteria->alias = 't1';
+	
+		$criteria->addCondition('t1.deleteflag = :p1');
+		$conditionParams[':p1'] = DELFLAG_NORMAL;
+	
+		$criteria->addCondition('t1.id = :p2');
+		$conditionParams[':p2'] = $id;
+	
+		$criteria->params = $conditionParams;
+	
+		// 检索数据
+		$resModelData =  $userInfo->find($criteria);
+	
+		if (!isset($resModelData) || empty($resModelData) || null === $resModelData) {
+			return STATUS_NG;
+		}
+	
+		$resultData = array();
+	
+		foreach ($resModelData as $key=>$value) {
+			$resultData[$key]=$value;
+		}
+	
+		return $resultData;
+	}
+	
 	
 	/**
 	 * 通过分页条件获取记录集合
@@ -92,7 +147,7 @@ class UserInfoDao extends BaseDao {
 		$criteria->params = $conditionParams;
 
 		// 排序
-		$criteria->order = "t1.updatetime ASC ";
+		$criteria->order = ORDER_TYPE." DESC ";
 		
 		$userInfoCount = $userInfo->count($criteria);
 		$userInfoCount = intval($userInfoCount);
@@ -107,7 +162,7 @@ class UserInfoDao extends BaseDao {
 		$pageInfo['pages'] = $pages;
 		
 		// 设置当前是第几页
-		$pages->setCurrentPage($pageNum);
+		$pages->setCurrentPage($pageNum - 1);
 		 
 		// 限制当前页面条数
 		$pages->applyLimit($criteria);

@@ -4,39 +4,86 @@ class FollowUpDao extends BaseDao {
 	/**
 	 * 添加用户信息
 	 *
-	 * @param FollowUp $FollowUp
+	 * @param FollowUp $followUp
 	 * @return string
 	 */
-	public function addFollowUp(FollowUp $FollowUp) {
+	public function addFollowUp(FollowUp $followUp) {
 	
 		// 参数验证
-		if (!isset($FollowUp) || 0 >= count($FollowUp)) {
+		if (!isset($followUp) || empty($followUp) || null == $followUp) {
 			return STATUS_NG;
 		}
 	
-		if (isset($FollowUp->Id) && 0 < $FollowUp->Id) {
-			return STATUS_NG;
-		}
-	
-		if (!isset($FollowUp->userId) || 0 >= $FollowUp->userId) {
+		if (!isset($followUp->userId) || 0 >= $followUp->userId) {
 			return STATUS_NG;
 		}
 	
 		// 参数初始化设置
-		$FollowUp->CreateTime = date('Y-m-d H:i:s', time());
-		$FollowUp->UpdateTime = date('Y-m-d H:i:s', time());
+		$followUp->createtime = date('Y-m-d H:i:s', time());
+		$followUp->updatetime = date('Y-m-d H:i:s', time());
 	
-		$FollowUp->deleteflag = DELFLAG_NORMAL;
+		$followUp->deleteflag = DELFLAG_NORMAL;
 	
 		// 插入操作
-		$FollowUp = $FollowUp->save();
+		$followUp = $followUp->save();
 	
-		if($FollowUp){
+		if($followUp){
 			$Id = Yii::app()->db->getLastInsertID();
 			return $Id;
 		}
 	
 		return STATUS_NG;
+	}
+	
+	/**
+	 * 通过跟进id获取跟进详情
+	 * 
+	 * @param unknown $id
+	 * @return string|CActiveRecord[]
+	 */
+	public function selectFollowInfo($id) {
+		// 参数判断
+		if (!isset($id) || empty($id) || 0 >= $id) {
+			return STATUS_NG;
+		}
+		
+		$sql = "t1.id,
+				t1.userId,
+				t1.followtime,
+				t1.context,
+				t1.remark,
+				t1.createtime,
+				t1.updatetime,
+				t1.deletetime ";
+		
+		$followUp = FollowUp::model();
+		$criteria = new CDbCriteria();
+	
+		$criteria->select = $sql;
+		$criteria->alias = 't1';
+		
+		$criteria->addCondition('t1.deleteflag = :p1');
+		$conditionParams[':p1'] = DELFLAG_NORMAL;
+		
+		$criteria->addCondition('t1.id = :p2');
+		$conditionParams[':p2'] = $id;
+		
+		$criteria->params = $conditionParams;
+		
+		// 检索数据
+		$resModelData =  $followUp->find($criteria);
+		
+		if (!isset($resModelData) || empty($resModelData) || null === $resModelData) {
+			return STATUS_NG;
+		}
+		
+		$resultData = array();
+		
+		foreach ($resModelData as $key=>$value) {
+			$resultData[$key]=$value;
+		}
+		
+		return $resultData;
 	}
 	
 	/**
@@ -57,7 +104,7 @@ class FollowUpDao extends BaseDao {
 				t1.updatetime,
 				t1.deletetime ";
 	
-		$FollowUp = FollowUp::model();
+		$followUp = FollowUp::model();
 		$criteria = new CDbCriteria();
 	
 		$criteria->select = $sql;
@@ -74,28 +121,28 @@ class FollowUpDao extends BaseDao {
 		$criteria->params = $conditionParams;
 	
 		// 排序
-		$criteria->order = "t1.updatetime ASC ";
+		$criteria->order = "t1.updatetime DESC ";
 	
-		$FollowUpCount = $FollowUp->count($criteria);
-		$FollowUpCount = intval($FollowUpCount);
+		$followUpCount = $followUp->count($criteria);
+		$followUpCount = intval($followUpCount);
 	
 		//设置分页信息
-		$pages = new CPaginationPost($FollowUpCount);
+		$pages = new CPaginationPost($followUpCount);
 	
 		// 分页信息设置
-		$pageInfo['count'] = $FollowUpCount;
+		$pageInfo['count'] = $followUpCount;
 		// 一页几条
 		$pages->pageSize = $pageSize;
 		$pageInfo['pages'] = $pages;
 	
 		// 设置当前是第几页
-		$pages->setCurrentPage($pageNum);
+		$pages->setCurrentPage($pageNum - 1);
 			
 		// 限制当前页面条数
 		$pages->applyLimit($criteria);
 	
 		// 检索数据
-		$resAllModelData =  $FollowUp->findAll($criteria);
+		$resAllModelData =  $followUp->findAll($criteria);
 	
 		// 查询成功;返回结果
 		if (isset($resAllModelData) && 0 < count($resAllModelData)) {
@@ -133,48 +180,48 @@ class FollowUpDao extends BaseDao {
 	}
 	
 	
-	public function upFollowUp(FollowUp $FollowUp) {
+	public function upFollowUp(FollowUp $followUp) {
 		// 参数验证
-		if (!isset($FollowUp) || count($FollowUp)) {
+		if (!isset($followUp) || count($followUp)) {
 			return STATUS_NG;
 		}
 	
-		if (!isset($FollowUp->id) || false === $FollowUp->id) {
+		if (!isset($followUp->id) || false === $followUp->id) {
 			return STATUS_NG;
 		}
 	
-		$FollowUpModel = FollowUp::model()->find('Id=:p', array(':p'=>$FollowUp->id));
+		$followUpModel = FollowUp::model()->find('Id=:p', array(':p'=>$followUp->id));
 
-		if(isset($FollowUp->followtime) && '' !== $FollowUp->followtime) {
-			$FollowUpModel->followtime = $FollowUp->followtime;
+		if(isset($followUp->followtime) && '' !== $followUp->followtime) {
+			$followUpModel->followtime = $followUp->followtime;
 		}
 	
-		if(isset($FollowUp->context) && '' !== $FollowUp->context) {
-			$FollowUpModel->context = $FollowUp->context;
+		if(isset($followUp->context) && '' !== $followUp->context) {
+			$followUpModel->context = $followUp->context;
 		}
 	
-		if(isset($FollowUp->remark) && '' !== $FollowUp->remark) {
-			$FollowUpModel->remark = $FollowUp->remark;
+		if(isset($followUp->remark) && '' !== $followUp->remark) {
+			$followUpModel->remark = $followUp->remark;
 		}
 	
-		if(isset($FollowUp->updatetime) && '' !== $FollowUp->updatetime) {
-			$FollowUpModel->updatetime = $FollowUp->updatetime;
+		if(isset($followUp->updatetime) && '' !== $followUp->updatetime) {
+			$followUpModel->updatetime = $followUp->updatetime;
 		} else {
-			$FollowUpModel->UpdateTime = date('Y-m-d H:i:s', time());
+			$followUpModel->UpdateTime = date('Y-m-d H:i:s', time());
 		}
 	
-		if(isset($FollowUp->deleteflag) && '' !== $FollowUp->deleteflag) {
-			$FollowUpModel->deleteflag = $FollowUp->deleteflag;
+		if(isset($followUp->deleteflag) && '' !== $followUp->deleteflag) {
+			$followUpModel->deleteflag = $followUp->deleteflag;
 		}
 	
-		if(isset($FollowUp->deletetime) && '' !== $FollowUp->deletetime) {
-			$FollowUpModel->deletetime = $FollowUp->deletetime;
+		if(isset($followUp->deletetime) && '' !== $followUp->deletetime) {
+			$followUpModel->deletetime = $followUp->deletetime;
 		}
 	
 		// 更新操作
-		$FollowUpModel = $FollowUpModel->update();
+		$followUpModel = $followUpModel->update();
 	
-		if ($FollowUpModel) {
+		if ($followUpModel) {
 			return STATUS_OK;
 		}
 		return STATUS_NG;
@@ -188,12 +235,12 @@ class FollowUpDao extends BaseDao {
 	 */
 	public function delFollowUp($Id) {
 	
-		$FollowUp = FollowUp::model();
+		$followUp = FollowUp::model();
 	
-		$FollowUp->id = $Id;
-		$FollowUp->deleteflag = DELFLAG_DELETE;
-		$FollowUp->deletetime = date('Y-m-d H:i:s', time());
-		$result = $this->upFollowUp($FollowUp);
+		$followUp->id = $Id;
+		$followUp->deleteflag = DELFLAG_DELETE;
+		$followUp->deletetime = date('Y-m-d H:i:s', time());
+		$result = $this->upFollowUp($followUp);
 	
 		return $result;
 	

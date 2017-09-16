@@ -17,7 +17,11 @@ define('BOOTSTRAP_JS', "/static/bootstrap/js/");
 define('STATIC_PATH', "/static/default/");
 
 
-/*数据字段常量*/
+/*******************************数据字段常量*******************************/
+
+// 用户/孩子 排序类型
+define('ORDER_TYPE', 't1.updatetime');
+
 // 操作字段-停用
 define('OPEFLAG_DISABLED', 4);
 // 操作字段-启用

@@ -8,37 +8,37 @@ class ChildInfoDao extends BaseDao {
 	 * @param ChildInfo $ChildInfo
 	 * @return string
 	 */
-	public function addChildInfo(ChildInfo $ChildInfo) {
+	public function addChildInfo(ChildInfo $childInfo) {
 	
 		// 参数验证
-		if (!isset($ChildInfo) || 0 >= count($ChildInfo)) {
+		if (!isset($childInfo) || 0 >= count($childInfo)) {
 			return STATUS_NG;
 		}
 	
-		if (isset($ChildInfo->Id) && 0 < $ChildInfo->Id) {
+		if (isset($childInfo->Id) && 0 < $childInfo->Id) {
 			return STATUS_NG;
 		}
 		
-		if (!isset($ChildInfo->userinfoId) || 0 >= $ChildInfo->userinfoId) {
+		if (!isset($childInfo->userinfoId) || 0 >= $childInfo->userinfoId) {
 			return STATUS_NG;
 		}
 		
-		if(!isset($ChildInfo->realname) || '' == $ChildInfo->realname || -1 == $ChildInfo->realname){
+		if(!isset($childInfo->realname) || '' == $childInfo->realname || -1 == $childInfo->realname){
 			return STATUS_NG;
 		}
 	
 		// 参数初始化设置
-		$ChildInfo->CreateTime = date('Y-m-d H:i:s', time());
-		$ChildInfo->UpdateTime = date('Y-m-d H:i:s', time());
+		$childInfo->createtime = date('Y-m-d H:i:s', time());
+		$childInfo->updatetime = date('Y-m-d H:i:s', time());
 	
-		$ChildInfo->deleteflag = DELFLAG_NORMAL;
+		$childInfo->deleteflag = DELFLAG_NORMAL;
 	
 		// 插入操作
-		$ChildInfo = $ChildInfo->save();
-	
-		if($ChildInfo){
-			$Id = Yii::app()->db->getLastInsertID();
-			return $Id;
+		$resultData = $childInfo->save();
+		
+		if($resultData){
+			$id = Yii::app()->db->getLastInsertID();
+			return $id;
 		}
 	
 		return STATUS_NG;
@@ -51,7 +51,7 @@ class ChildInfoDao extends BaseDao {
 	 * @param unknown $pageSize
 	 * @return string[]|number[]|unknown[][][]|string
 	 */
-	public function getChildInfoList($pageNum, $pageSize) {
+	public function getChildInfoList($parentId) {
 	
 		$sql = "t1.id,
 				t1.userinfoId,
@@ -77,28 +77,13 @@ class ChildInfoDao extends BaseDao {
 		$criteria->addCondition('t1.deleteflag = :p1');
 		$conditionParams[':p1'] = DELFLAG_NORMAL;
 	
+		$criteria->addCondition('t1.userinfoId = :p2');
+		$conditionParams[':p2'] = $parentId;
+		
 		$criteria->params = $conditionParams;
 	
 		// 排序
-		$criteria->order = "t1.updatetime ASC ";
-	
-		$ChildInfoCount = $ChildInfo->count($criteria);
-		$ChildInfoCount = intval($ChildInfoCount);
-	
-		//设置分页信息
-		$pages = new CPaginationPost($ChildInfoCount);
-	
-		// 分页信息设置
-		$pageInfo['count'] = $ChildInfoCount;
-		// 一页几条
-		$pages->pageSize = $pageSize;
-		$pageInfo['pages'] = $pages;
-	
-		// 设置当前是第几页
-		$pages->setCurrentPage($pageNum);
-			
-		// 限制当前页面条数
-		$pages->applyLimit($criteria);
+		$criteria->order = ORDER_TYPE." DESC ";
 	
 		// 检索数据
 		$resAllModelData =  $ChildInfo->findAll($criteria);
@@ -124,8 +109,6 @@ class ChildInfoDao extends BaseDao {
 			$resData['resStatus'] = STATUS_OK;
 			//数据
 			$resData['resArray'] = $resArray;
-	
-			$resData['pageInfo'] = $pageInfo;
 	
 			return $resData;
 		}
