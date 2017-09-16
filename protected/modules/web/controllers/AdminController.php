@@ -74,15 +74,15 @@ class AdminController extends WebBaseController {
 		// 获取参数
 		$username = $this->getValue('username');
 		$password = $this->getValue('password');
+		$isLogin = $this->getValue('isLogin');
 	
 		// 参数验证
-		if (!isset($username) || null === $username || '' === $username
-				|| empty($username) || false === $username || !isset($password)
-				|| null === $password || '' === $password || empty($password) || false === $password) {
+		if (!isset($username) || null == $username || '' == $username
+				|| empty($username) || false == $username || !isset($password)
+				|| null == $password || '' == $password || empty($password) || false == $password) {
 					$result['errorFlag'] = true;
 					$result['errorMsg'] = '用户名或密码不能为空';
 					$result['errorCode'] = 'actionSignin-001';
-					echo json_encode($result);
 					return;
 				}
 	
@@ -90,7 +90,15 @@ class AdminController extends WebBaseController {
 				
 				$result = $userDao->verifyUser($username, $password);
 				
-				if (STATUS_OK === $result) {
+				if (STATUS_OK == $result['resStatus']) {
+					
+					$_SESSION['id'] = $result['id'];
+					$_SESSION['username'] = $result['username'];
+					$_SESSION['isLogin'] = false;
+					if (1 == $isLogin) {
+						$_SESSION['isLogin'] = true;
+					}
+					
 					$this->redirect($this->urls['homePage']);
 					return;
 				}

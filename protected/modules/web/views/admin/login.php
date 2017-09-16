@@ -8,7 +8,7 @@
         <input name='password' type="password" id="inputPassword" class="form-control" placeholder="密码" required>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> 保存密码
+            <input type="checkbox" id="isLogin" name="isLogin" value="remember-me"> 保存密码
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登 录</button>

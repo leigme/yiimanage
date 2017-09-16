@@ -41,6 +41,12 @@ class UserDao extends BaseDao {
 		return STATUS_NG;
 	}
 	
+	/**
+	 * 登录验证
+	 * 
+	 * @param unknown $username
+	 * @param unknown $password
+	 */
 	public function verifyUser($username, $password) {
 		// 参数判断
 		if (!isset($username) || empty($username) || null === $username || '' === $username 
@@ -76,11 +82,13 @@ class UserDao extends BaseDao {
 			$resultData[$key]=$value;
 		}
 		
-		if (strcmp($password, $resultData['password'])) {
-			return STATUS_OK;
+		$resultData['resStatus'] = STATUS_NG;
+		
+		if (0 == strcmp($password, $resultData['password'])) {
+			$resultData['resStatus'] = STATUS_OK;
 		}
 		
-		return STATUS_NG;
+		return $resultData;
 	}
 	
 	/**
