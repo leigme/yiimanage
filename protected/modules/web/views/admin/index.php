@@ -38,7 +38,7 @@
                       <td><?php echo $resData['career']; ?></td>
                       <td><?php echo $resData['weixinnum']; ?></td>
                       <td><?php echo $resData['telephonenum']; ?></td>
-                      <td><a href="<?php echo $this->urls['detailPage'].'/id/'.$resData['id']; ?>">详情</a> / <a href="">修改</a> / <a href="">删除</a></td>
+                      <td><a href="<?php echo $this->urls['detailPage'].'/id/'.$resData['id']; ?>">详情</a> / <a href="<?php echo $this->urls['delUser'].'/id/'.$resData['id']; ?>" onClick="if(confirm('确认删除吗？'))return true;return false;">删除</a></td>
                     </tr>
                     <?php
                     }

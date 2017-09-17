@@ -6,7 +6,7 @@
   	<div class="container">
   		<label style="margin: 100px 0px 0px 0px">客户详情</label>
   		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['upUserPage'].'/id/'.$userId; ?>">修改详情</a>
-		<table class="table table-striped">
+		<table class="table table-striped" style="margin: 10px 0px 0px 0px">
 	      	<tbody>
 		        <tr>
 	          		<td>客户名称</td>

@@ -16,11 +16,7 @@ class UserInfoDao extends BaseDao {
 	public function addUserInfo(Userinfo $userInfo) {
 		
 		// 参数验证
-		if (!isset($userInfo) || 0 >= count($userInfo)) {
-			return STATUS_NG;
-		}
-		
-		if (isset($userInfo->Id) && 0 < $userInfo->Id) {
+		if (!isset($userInfo) || empty($userInfo) || null == $userInfo) {
 			return STATUS_NG;
 		}
 		
@@ -29,7 +25,10 @@ class UserInfoDao extends BaseDao {
 		}
 		
 		// 参数初始化设置
-		$userInfo->createtime = date('Y-m-d H:i:s', time());
+		if (!isset($userInfo->id)) {
+		    $userInfo->createtime = date('Y-m-d H:i:s', time());
+		}
+		
 		$userInfo->updatetime = date('Y-m-d H:i:s', time());
 
 		$userInfo->deleteflag = DELFLAG_NORMAL;

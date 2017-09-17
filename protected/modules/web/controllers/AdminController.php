@@ -27,6 +27,8 @@ class AdminController extends WebBaseController {
 	 */
 	function actionIndex() {
 		
+	    $this->verifyLogin();
+	    
 		$this->setCSS('dashboard.css');
 		
 		$this->setPageTitle('客户列表');
@@ -104,6 +106,13 @@ class AdminController extends WebBaseController {
 				}
 	
 				$this->redirect($this->urls['loginPage']);
+	}
+	
+	/**
+	 * 退出登录
+	 */
+	public function actionSignout() {
+	    
 	}
 	
 	/**

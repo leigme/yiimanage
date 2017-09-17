@@ -6,7 +6,7 @@
   <div class="container">
 
     <form class="form-inline" id="myForm" action="<?php echo $this->urls['addUser']; ?>" method="POST">
-
+      <input type="hidden" id="id" name="id" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['id'];}; ?>">
       <div class="row topheader">
 
         <div class="col-md-2"></div>
@@ -16,7 +16,7 @@
             <div class="col-md-6">
              <div class="form-group">
                <label for="exampleInputName2">姓名</label>
-               <input name="realname" id="realname" type="text" class="form-control" id="exampleInputName2" placeholder="请输入用户姓名">
+               <input name="realname" id="realname" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['realname'];}; ?>" type="text" class="form-control" id="exampleInputName2" placeholder="请输入用户姓名">
              </div>
            </div>
 
@@ -25,7 +25,7 @@
             <div class="form-group">
               <label for="exampleInputName2">性别</label>
               <select name="sex" id="sex" class="form-control">
-                <option value="-1">选择</option>
+                <option value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['sex'];} else { echo '-1';}; ?>"><?php if (STATUS_NG != $userInfo) { echo $userInfo['sexTitle'];} else { echo '选择';}; ?></option>
                 <option value="2">男</option>
                 <option value="4">女</option>
               </select>
@@ -38,7 +38,7 @@
          <div class="col-md-6">
            <div class="form-group">
             <label for="exampleInputName2">微信</label>
-            <input name="weixin" id="weixin" type="text" class="form-control" id="exampleInputName2" placeholder="weixin">
+            <input name="weixin" id="weixin" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['weixinnum'];}; ?>"  type="text" class="form-control" id="exampleInputName2" placeholder="weixin">
           </div>
         </div>
         <div class="col-md-6">
@@ -46,7 +46,7 @@
          <div class="form-group">
            <label for="exampleInputName2">价格敏感度</label>
            <select name="price" id="price" class="form-control">
-             <option value="-1">选择</option>
+             <option value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['pricelevel'];} else {echo -1;}; ?>"><?php if (STATUS_NG != $userInfo) { echo $userInfo['pricelevelTitle'];} else {echo '选择';}; ?></option>
              <option value="2">低</option>
              <option value="4">中</option>
              <option value="8">高</option>
@@ -63,13 +63,13 @@
        <div class="col-md-6">
          <div class="form-group">
           <label for="exampleInputEmail2">电话</label>
-          <input name="telephone" id="telephone" type="text" class="form-control" id="exampleInputEmail2" placeholder="18888888888">
+          <input name="telephone" id="telephone" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['telephonenum'];}; ?>" type="text" class="form-control" id="exampleInputEmail2" placeholder="18888888888">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label for="exampleInputName2">年龄</label>
-          <input name="age" id="age" type="text" class="form-control" id="exampleInputName2" placeholder="18">
+          <input name="age" id="age" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['age'];}; ?>" type="text" class="form-control" id="exampleInputName2" placeholder="18">
         </div>
 
       </div>
@@ -81,13 +81,13 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="exampleInputName2">邮件</label>
-          <input  name="email" id="email" type="email" class="form-control" id="exampleInputName2" placeholder="example@example.com">
+          <input  name="email" id="email" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['email'];}; ?>" type="email" class="form-control" id="exampleInputName2" placeholder="example@example.com">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label for="exampleInputName2">职业</label>
-          <input name="career" id="career" type="text" class="form-control" id="exampleInputName2" placeholder="老板">
+          <input name="career" id="career" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['career'];}; ?>" type="text" class="form-control" id="exampleInputName2" placeholder="老板">
         </div>
 
       </div>
@@ -99,7 +99,7 @@
      <div class="col-md-6">
       <div class="form-group">
         <label for="exampleInputName2">来源</label>
-        <input name="come" id="come" type="text" class="form-control" id="exampleInputName2" placeholder="">
+        <input name="come" id="come" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['come'];}; ?>" type="text" class="form-control" id="exampleInputName2" placeholder="">
       </div>
     </div>
     <div class="col-md-6">
@@ -112,7 +112,7 @@
 
    <div class="col-md-12">
      <label for="exampleInputName2">备注</label>
-     <textarea name="remark" id="remark" class="form-control" rows="3" cols="80"></textarea>
+     <textarea name="remark" id="remark" value="<?php if (STATUS_NG != $userInfo) { echo $userInfo['remark'];}; ?>" class="form-control" rows="3" cols="80"></textarea>
    </div>
 
  </div><!--row 6 end-->

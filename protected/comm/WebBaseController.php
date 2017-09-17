@@ -19,6 +19,9 @@ class WebBaseController extends BaseController {
 		$this->pageTitle = $name;
 	}
 	
+	/**
+	 * 设置基础样式
+	 */
 	public function setBootstrap() {
 		
 		Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.BOOTSTRAP_CSS.'bootstrap.min.css');
@@ -28,9 +31,28 @@ class WebBaseController extends BaseController {
 		
 	}
 	
+	/**
+	 * 设置主题
+	 */
 	public function setTheme() {
 		
 		$this->layout = "//default/index";
+	}
+	
+	/**
+	 * 登录验证
+	 */
+	public function verifyLogin() {
+	    
+	    if (!isset($_SESSION['isLogin'])) {
+	        $this->redirect($this->urls['loginPage']);
+	        return;
+	    } else {
+	        if (!isset($_SESSION['username'])) {
+	            $this->redirect($this->urls['loginPage']);
+	            return;
+	        }
+	    }
 	}
 	
 	/**
@@ -47,6 +69,7 @@ class WebBaseController extends BaseController {
 		$this->urls = array(
 				'loginPage'=>$this->mCreateUrl('web/admin/login'),
 				'login'=>$this->mCreateUrl('web/admin/signin'),
+		        'signOut'=>$this->mCreateUrl('web/admin/signout'),
 				'homePage'=>$this->mCreateUrl('web/admin/index'),
 				'findRecord'=>$this->mCreateUrl('web/admin/finduser'),
 				'addUserPage'=>$this->mCreateUrl('web/userinfo/index'),

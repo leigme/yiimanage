@@ -11,22 +11,44 @@ class UserInfoController extends WebBaseController {
 	
 		$this->setPageTitle('添加客户');
 	
-		$this->render('adduser');
-	}
-	
-	public function actionChild() {
-	    
-	    $this->setCSS('dashboard.css');
-	    $this->setCSS('bootstrap-datetimepicker.min.css');
-	    
-	    $this->setJS('bootstrap-datetimepicker.min.js');
-	    $this->setJS('locales/bootstrap-datetimepicker.zh-CN.js');
-	    
-	    $this->setPageTitle('添加孩子');
-	    
-	    $parentId = $this->getValue('id');
-	    
-	    $this->render('addchild', array('parentId'=>$parentId, ));
+		$userId = $this->getValue('id');
+
+		if (!isset($userId) || empty($userId) || null == $userId) {
+		    $userInfo = STATUS_NG;
+		} else {
+		    $userInfoDao = new UserInfoDao();
+		    $userInfo = $userInfoDao->selectUserInfo($userId);
+		    
+		    switch ($userInfo['sex']) {
+		        case SEX_KEY_MALE:
+		            $userInfo['sexTitle'] = '男';
+		            break;
+		        case SEX__KEY_FEMALE:
+		            $userInfo['sexTitle'] = '女';
+		            break;
+		        default:
+		            $userInfo['sexTitle'] = '无';
+		            break;
+		    }
+		    
+		    switch ($userInfo['pricelevel']) {
+		        case PRICE_HIGH:
+		            $userInfo['pricelevelTitle'] = '高';
+		            break;
+		        case PRICE_MID:
+		            $userInfo['pricelevelTitle'] = '中';
+		            break;
+		        case PRICE_LOW:
+		            $userInfo['pricelevelTitle'] = '低';
+		            break;
+		        default:
+		            $userInfo['pricelevelTitle'] = '无';
+		            break;
+		    }
+		    
+		}
+		
+		$this->render('adduser', array('userInfo'=>$userInfo, ));
 	}
 	
 	/**
@@ -49,7 +71,14 @@ class UserInfoController extends WebBaseController {
 		$age = $this->getValue('age');
 		$career = $this->getValue('career');
 		
-		$userInfo = new Userinfo();
+		$userId = (int)$this->getValue('id');
+		
+		if (isset($userId) && 0 < $userId) {
+		     $userInfo = Userinfo::model();
+		     $userInfo->id = (int)$userId;
+		} else {
+		    $userInfo = new Userinfo();
+		}
 
 		$userInfo->realname = $realname;
 		$userInfo->weixinnum = $weixin;
@@ -70,6 +99,27 @@ class UserInfoController extends WebBaseController {
 		
 	}
 	
+	/**
+	 * 添加孩子页面
+	 */
+	public function actionChild() {
+	     
+	    $this->setCSS('dashboard.css');
+	    $this->setCSS('bootstrap-datetimepicker.min.css');
+	     
+	    $this->setJS('bootstrap-datetimepicker.min.js');
+	    $this->setJS('locales/bootstrap-datetimepicker.zh-CN.js');
+	     
+	    $this->setPageTitle('添加孩子');
+	     
+	    $parentId = $this->getValue('id');
+	     
+	    $this->render('addchild', array('parentId'=>$parentId, ));
+	}
+	
+	/**
+	 * 添加孩子操作
+	 */
     public function actionAddChild() {
     	// 参数验证
     	$parentId = $this->getValue('parentId');
@@ -115,9 +165,19 @@ class UserInfoController extends WebBaseController {
     }
 	
 	/**
-	 * 修改用户操作
+	 * 修改用户页面
 	 */
-	public function actionUpUser() {}
+	public function actionUpUserInfo() {
+	    
+	    $userId = $this->getValue('id');
+	    
+	    // 参数验证
+	    if (!isset($userId) || empty($userId) || null == $userId || '' == $userId) {
+	        return;
+	    }
+	    
+	    $this->redirect(array('index', 'id'=>$userId, ));
+	}
 	
 	public function actionUpChild() {}
 	
@@ -125,7 +185,9 @@ class UserInfoController extends WebBaseController {
 	 * 删除用户操作
 	 */
 	public function actionDelUser() {
-		
+	    
+	    $userId = $this->getValue('id');
+	    
 		$this->redirect($this->urls['homePage']);
 		
 	}
