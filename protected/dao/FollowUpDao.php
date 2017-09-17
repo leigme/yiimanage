@@ -93,7 +93,7 @@ class FollowUpDao extends BaseDao {
 	 * @param unknown $pageSize
 	 * @return string[]|number[]|unknown[][][]|string
 	 */
-	public function getFollowUpList($pageNum, $pageSize) {
+	public function getFollowUpList($userId, $pageNum, $pageSize) {
 	
 		$sql = "t1.id,
 				t1.userId,
@@ -118,6 +118,9 @@ class FollowUpDao extends BaseDao {
 		$criteria->addCondition('t1.deleteflag = :p1');
 		$conditionParams[':p1'] = DELFLAG_NORMAL;
 	
+		$criteria->addCondition('t1.userId = :p2');
+		$conditionParams[':p2'] = $userId;
+		
 		$criteria->params = $conditionParams;
 	
 		// 排序

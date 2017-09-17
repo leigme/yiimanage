@@ -5,6 +5,7 @@
 
   	<div class="container">
   		<label style="margin: 100px 0px 0px 0px">客户详情</label>
+  		<a type="submit" class="btn btn-primary" href="<?php echo $this->urls['upUserPage'].'/id/'.$userId; ?>">修改详情</a>
 		<table class="table table-striped">
 	      	<tbody>
 		        <tr>
@@ -88,11 +89,11 @@
                   <th>操作</th>
                 </tr>
               </thead>
-              <tbody>
-              	<?php 
+                <?php 
               		if (STATUS_NG != $followsData) {
               			foreach ($followsData as $followData) {
               	?>
+              <tbody>
               	<tr>
                   <td><?php echo $followData['id']; ?></td>
                   <td><?php echo $followData['followtime']; ?></td>
@@ -100,28 +101,30 @@
                   <td><?php echo $followData['remark']; ?></td>
                   <td><a href="<?php echo $this->urls['upFollowPage'].'/id/'.$userId.'/followId/'.$followData['id']; ?>">修改</a> / <a href="">删除</a></td>
                 </tr>
+              </tbody>
               	<?php
               			}
               		}
               	?>
-              </tbody>
         </table>
-        		<?php
-                  $this->widget('CLinkPager', array('pages'=>$pages['pages'], 
-                    'header'=>false,  
-                    'htmlOptions'=>array('class'=>'pagination pull-right'),  
-                    'selectedPageCssClass' => 'active',  
-                    'hiddenPageCssClass' => 'disabled',  
-                    'firstPageLabel'=>'首页',  
-                    'lastPageLabel'=>'尾页',  
-                    'prevPageLabel'=>'«',  
-                    'nextPageLabel'=>'»',  
-                    'maxButtonCount'=>5,  
-                    'cssFile'=>false,  
-                    'firstPageCssClass'=>'previous',  
-                    'lastPageCssClass'=>'next', 
-                  ));
-                ?>
+        <?php 
+        	if (STATUS_NG != $followsData) {
+        		$this->widget('CLinkPager', array('pages'=>$pages['pages'], 
+                		'header'=>false,  
+                    	'htmlOptions'=>array('class'=>'pagination pull-right'),  
+	                    'selectedPageCssClass' => 'active',  
+	                    'hiddenPageCssClass' => 'disabled',  
+	                    'firstPageLabel'=>'首页',  
+	                    'lastPageLabel'=>'尾页',  
+	                    'prevPageLabel'=>'«',  
+	                    'nextPageLabel'=>'»',  
+	                    'maxButtonCount'=>5,  
+	                    'cssFile'=>false,  
+	                    'firstPageCssClass'=>'previous',  
+	                    'lastPageCssClass'=>'next', 
+                	));
+        	}
+        ?>
 	</div>
 </body>
 

@@ -51,13 +51,20 @@ class WebBaseController extends BaseController {
 				'findRecord'=>$this->mCreateUrl('web/admin/finduser'),
 				'addUserPage'=>$this->mCreateUrl('web/userinfo/index'),
 				'addUser'=>$this->mCreateUrl('web/userinfo/adduser'),
+    		    'detailPage'=>$this->mCreateUrl('web/admin/detail'),
+    		    'upUserPage'=>$this->mCreateUrl('web/userinfo/upuserinfo'),
+		        'upUser'=>$this->mCreateUrl('web/userinfo/up'),
+		        'delUser'=>$this->mCreateUrl('web/userinfo/deluser'),
 		        'addChildPage'=>$this->mCreateUrl('web/userinfo/child'),
 				'addChild'=>$this->mCreateUrl('web/userinfo/addchild'),
-				'detailPage'=>$this->mCreateUrl('web/admin/detail'),
+		        'upChildPage'=>$this->mCreateUrl('web/userinfo/upchildinfo'),
+		        'upChild'=>$this->mCreateUrl('web/userinfo/upchild'),
+    		    'delChild'=>$this->mCreateUrl('web/userinfo/delchild'),
 				'addFollowPage'=>$this->mCreateUrl('web/follow/addfollow'),
 				'addFollow'=>$this->mCreateUrl('web/follow/add'),
 				'upFollowPage'=>$this->mCreateUrl('web/follow/upfollow'),
 				'upFollow'=>$this->mCreateUrl('web/follow/up'),
+    		    'delFollow'=>$this->mCreateUrl('web/follow/del'),
 		);
 		
 		return true;

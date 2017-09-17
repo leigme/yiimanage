@@ -121,7 +121,6 @@ class AdminController extends WebBaseController {
 	    	$result['errorFlag'] = true;
 	    	$result['errorMsg'] = '客户编号不能为空';
 	    	$result['errorCode'] = 'actionDetail-001';
-	    
 	    	return;
 	    }
 	    
@@ -168,6 +167,7 @@ class AdminController extends WebBaseController {
 	    $childInfoDao = new ChildInfoDao();
 	    $childResultDatas = $childInfoDao->getChildInfoList($id);
 	    $childInfos = STATUS_NG;
+	    // 按输入显示性别
 	    if (isset($childResultDatas) && STATUS_NG != $childResultDatas['resStatus']) {
 	    	for ($i = 0; $i < count($childResultDatas['resArray']); $i++ ) {
 	    		switch ($childResultDatas['resArray'][$i]['sex']) {
@@ -182,7 +182,9 @@ class AdminController extends WebBaseController {
 	    				break;
 	    		}
 	    		
+	    		// 计算当前时间和生日时间差值
 	    		$common = (time() - strtotime($childResultDatas['resArray'][$i]['birthday']));
+	    		// 将时间差值换算成年
 	    		$age = floor($common/86400/360);
 	    		
 	    		$childResultDatas['resArray'][$i]['age'] = $age;
@@ -194,11 +196,19 @@ class AdminController extends WebBaseController {
 	    
 	    // 获取跟进信息集合
 	    $followDao = new FollowUpDao();
-	    $followResultDatas = $followDao->getFollowUpList($pageNum, $pageSize);
+	    $followResultDatas = $followDao->getFollowUpList($id, $pageNum, $pageSize);
+	    
 	    $followListData = array();
 	    
 	    if (!isset($followListData) || STATUS_NG == $followResultDatas['resStatus']) {
 	    	$followListData == STATUS_NG;
+	    	$this->render('details', array(
+	    	    'userId'=>$id,
+	    	    'userInfo'=>$userInfoData,
+	    	    'childInfos'=>$childInfos,
+	    	    'followsData'=>STATUS_NG,
+	    	));
+	    	return;
 	    }
 	    
 	    $this->render('details', array(
