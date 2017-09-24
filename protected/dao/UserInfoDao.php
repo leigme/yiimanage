@@ -100,6 +100,106 @@ class UserInfoDao extends BaseDao {
 		return $resultData;
 	}
 	
+	public function getUserInfoListByConditions(Userinfo $user, $pageNum) {
+		
+		$sql = "t1.id,
+				t1.createby,
+				t1.realname,
+				t1.birthday,
+				t1.sex,
+				t1.age,
+				t1.career,
+				t1.remark,
+				t1.come,
+				t1.pricelevel,
+				t1.email,
+				t1.telephonenum,
+				t1.weixinnum,
+				t1.qqnum,
+				t1.sinanum,
+				t1.createtime,
+				t1.updatetime,
+				t1.deletetime ";
+		
+		$userInfo = Userinfo::model();
+		$criteria = new CDbCriteria();
+		
+		$criteria->select = $sql;
+		$criteria->alias = 't1';
+		
+		//         $joinSQL=' INNER JOIN {{user}} t2 ON t1.UserId=t2.Id ';
+		//         $joinSQL=$joinSQL.' LEFT JOIN {{question}} t5 ON t1.QuestionId=t5.Id ';
+		
+		//         $criteria->join=$joinSQL;
+		
+		$criteria->addCondition('t1.deleteflag = :p1');
+		$conditionParams[':p1'] = DELFLAG_NORMAL;
+		
+		if (isset($user->realname) && "" != $user->realname) {
+			$criteria->addCondition('t1.realname like :p2');
+			$conditionParams[':p2'] = $user->realname;
+		}
+		
+		$criteria->params = $conditionParams;
+		
+		// 排序
+		$criteria->order = ORDER_TYPE." DESC ";
+		
+		$userInfoCount = $userInfo->count($criteria);
+		$userInfoCount = intval($userInfoCount);
+		
+		//设置分页信息
+		$pages = new CPaginationPost($userInfoCount);
+		
+		// 分页信息设置
+		$pageInfo['count'] = $userInfoCount;
+		// 一页几条
+		$pages->pageSize = PAGE_SIZE;
+		$pageInfo['pages'] = $pages;
+		
+		// 设置当前是第几页
+		$pages->setCurrentPage($pageNum - 1);
+			
+		// 限制当前页面条数
+		$pages->applyLimit($criteria);
+		
+		// 检索数据
+		$resAllModelData =  $userInfo->findAll($criteria);
+		
+		// 查询成功;返回结果
+		if (isset($resAllModelData) && 0 < count($resAllModelData)) {
+			// 查询结果
+			$resArray = array();
+		
+			// 返回数据
+			$resData = array();
+		
+			foreach ($resAllModelData as $itemData) {
+		
+				$oneData = array();
+		
+				foreach ($itemData as $key=>$value) {
+					$oneData[$key]=$value;
+				}
+				$resArray[] = $oneData;
+			}
+		
+			$resData['resStatus'] = STATUS_OK;
+			//数据
+			$resData['resArray'] = $resArray;
+		
+			$resData['pageInfo'] = $pageInfo;
+		
+			return $resData;
+		}
+		
+		// 查询失败;返回数据
+		$resData = array();
+		
+		$resData['resStatus'] = STATUS_NG;
+		
+		return $resData;
+	}
 	
 	/**
 	 * 通过分页条件获取记录集合

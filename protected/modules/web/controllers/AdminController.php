@@ -178,27 +178,27 @@ class AdminController extends WebBaseController {
 	    $childInfos = STATUS_NG;
 	    // 按输入显示性别
 	    if (isset($childResultDatas) && STATUS_NG != $childResultDatas['resStatus']) {
-	    	for ($i = 0; $i < count($childResultDatas['resArray']); $i++ ) {
-	    		switch ($childResultDatas['resArray'][$i]['sex']) {
-	    			case SEX_KEY_MALE:
-	    				$childResultDatas['resArray'][$i]['sex'] = '王子';
-	    				break;
-	    			case SEX__KEY_FEMALE:
-	    				$childResultDatas['resArray'][$i]['sex'] = '公主';
-	    				break;
-	    			default:
-	    				$childResultDatas['resArray'][$i]['sex'] = '无';
-	    				break;
-	    		}
-	    		
-	    		// 计算当前时间和生日时间差值
-	    		$common = (time() - strtotime($childResultDatas['resArray'][$i]['birthday']));
-	    		// 将时间差值换算成年
-	    		$age = floor($common/86400/360);
-	    		
-	    		$childResultDatas['resArray'][$i]['age'] = $age;
-	    	}
-	    	$childInfos = $childResultDatas['resArray'];
+		    	for ($i = 0; $i < count($childResultDatas['resArray']); $i++ ) {
+		    		switch ($childResultDatas['resArray'][$i]['sex']) {
+		    			case SEX_KEY_MALE:
+		    				$childResultDatas['resArray'][$i]['sex'] = '王子';
+		    				break;
+		    			case SEX__KEY_FEMALE:
+		    				$childResultDatas['resArray'][$i]['sex'] = '公主';
+		    				break;
+		    			default:
+		    				$childResultDatas['resArray'][$i]['sex'] = '无';
+		    				break;
+		    		}
+		    		
+		    		// 计算当前时间和生日时间差值
+		    		$common = (time() - strtotime($childResultDatas['resArray'][$i]['birthday']));
+		    		// 将时间差值换算成年
+		    		$age = floor($common/86400/360);
+		    		
+		    		$childResultDatas['resArray'][$i]['age'] = $age;
+		    	}
+	    		$childInfos = $childResultDatas['resArray'];
 	    }
 
 	    
