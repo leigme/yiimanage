@@ -188,6 +188,10 @@ class UserInfoController extends WebBaseController {
 	    
 	    $userId = $this->getValue('id');
 	    
+	    $userInfoDao = new UserInfoDao();
+	    
+	    $result = $userInfoDao->delUserInfo($userId);
+	    
 		$this->redirect($this->urls['homePage']);
 		
 	}

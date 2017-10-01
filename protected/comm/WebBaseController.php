@@ -71,7 +71,7 @@ class WebBaseController extends BaseController {
 				'login'=>$this->mCreateUrl('web/admin/signin'),
 		        'signOut'=>$this->mCreateUrl('web/admin/signout'),
 				'homePage'=>$this->mCreateUrl('web/admin/index'),
-				'findRecord'=>$this->mCreateUrl('web/admin/finduser'),
+				'findUser'=>$this->mCreateUrl('web/admin/finduser'),
 				'addUserPage'=>$this->mCreateUrl('web/userinfo/index'),
 				'addUser'=>$this->mCreateUrl('web/userinfo/adduser'),
     		    'detailPage'=>$this->mCreateUrl('web/admin/detail'),

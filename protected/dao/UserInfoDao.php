@@ -44,7 +44,11 @@ class UserInfoDao extends BaseDao {
 		return STATUS_NG;
 	}
 	
-	
+	/**
+	 * 通过用户Id获取用户详细信息
+	 * 
+	 * @param unknown $id
+	 */
 	public function selectUserInfo($id) {
 		// 参数判断
 		if (!isset($id) || empty($id) || 0 >= $id) {
@@ -100,6 +104,10 @@ class UserInfoDao extends BaseDao {
 		return $resultData;
 	}
 	
+	/*
+	 * 根据条件检索用户信息
+	 * 
+	 */
 	public function getUserInfoListByConditions(Userinfo $user, $pageNum) {
 		
 		$sql = "t1.id,
@@ -135,7 +143,7 @@ class UserInfoDao extends BaseDao {
 		$criteria->addCondition('t1.deleteflag = :p1');
 		$conditionParams[':p1'] = DELFLAG_NORMAL;
 		
-		if (isset($user->realname) && "" != $user->realname) {
+		if (isset($user->realname) && '' != $user->realname) {
 			$criteria->addCondition('t1.realname like :p2');
 			$conditionParams[':p2'] = $user->realname;
 		}
@@ -200,6 +208,8 @@ class UserInfoDao extends BaseDao {
 		
 		return $resData;
 	}
+	
+	
 	
 	/**
 	 * 通过分页条件获取记录集合
@@ -304,10 +314,14 @@ class UserInfoDao extends BaseDao {
 		return $resData;
 	}
 	
-	
+	/**
+	 * 更新用户信息
+	 * 
+	 * @param Userinfo $userInfo
+	 */
 	public function upUserInfo(Userinfo $userInfo) {
 		// 参数验证
-		if (!isset($userInfo) || count($userInfo)) {
+		if (!isset($userInfo)) {
 			return STATUS_NG;
 		}
 		

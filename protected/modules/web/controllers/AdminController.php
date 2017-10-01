@@ -65,8 +65,48 @@ class AdminController extends WebBaseController {
 		$this->render('index', array('resultData'=>$result, ));
 	}
 	
+	/**
+	 * 查询用户信息
+	 * 
+	 */
 	function actionFindUser() {
+		// 获取参数
+		$username = $this->getValue('username');
 		
+		// 参数验证
+		if (!isset($username) || empty($username) || null == $username || "" == $username) {
+			$result['errorFlag'] = true;
+			$result['errorMsg'] = '用户名不能为空';
+			$result['errorCode'] = 'actionFindUser-001';
+			return;
+		}
+		
+		$user = Userinfo::model();
+		
+		$user->realname = $username;
+		
+		$userInfoDao = new UserInfoDao();
+		
+		$result = $userInfoDao->getUserInfoListByConditions($user, PAGE_SIZE);
+		
+		if (isset($result) && !empty($result) && STATUS_OK === $result['resStatus']) {
+				
+			for ($i = 0; $i < count($result['resArray']); $i++ ) {
+				switch ($result['resArray'][$i]['sex']) {
+					case SEX_KEY_MALE:
+						$result['resArray'][$i]['sex'] = '男';
+						break;
+					case SEX__KEY_FEMALE:
+						$result['resArray'][$i]['sex'] = '女';
+						break;
+					default:
+						$result['resArray'][$i]['sex'] = '无';
+						break;
+				}
+			}
+		}
+		
+		$this->render('index', array('resultData'=>$result,));
 	}
 	
 	/**
@@ -88,24 +128,24 @@ class AdminController extends WebBaseController {
 					return;
 				}
 	
-				$userDao = new UserDao();
+			$userDao = new UserDao();
+			
+			$result = $userDao->verifyUser($username, $password);
+			
+			if (STATUS_OK == $result['resStatus']) {
 				
-				$result = $userDao->verifyUser($username, $password);
-				
-				if (STATUS_OK == $result['resStatus']) {
-					
-					$_SESSION['id'] = $result['id'];
-					$_SESSION['username'] = $result['username'];
-					$_SESSION['isLogin'] = false;
-					if (1 == $isLogin) {
-						$_SESSION['isLogin'] = true;
-					}
-					
-					$this->redirect($this->urls['homePage']);
-					return;
+				$_SESSION['id'] = $result['id'];
+				$_SESSION['username'] = $result['username'];
+				$_SESSION['isLogin'] = false;
+				if (1 == $isLogin) {
+					$_SESSION['isLogin'] = true;
 				}
-	
-				$this->redirect($this->urls['loginPage']);
+				
+				$this->redirect($this->urls['homePage']);
+				return;
+			}
+			
+			$this->redirect($this->urls['loginPage']);
 	}
 	
 	/**

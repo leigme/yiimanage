@@ -21,6 +21,11 @@ class SiteController extends Controller
 		);
 	}
 
+	public function actionTest() {
+		$userInfoDao = new UserInfoDao();
+		$userInfoDao->tesJion();	
+	}
+	
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
