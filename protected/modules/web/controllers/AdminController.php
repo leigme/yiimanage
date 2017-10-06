@@ -73,6 +73,10 @@ class AdminController extends WebBaseController {
 		// 获取参数
 		$username = $this->getValue('username');
 		
+		$this->setCSS('dashboard.css');
+		
+		$this->setPageTitle('客户列表');
+		
 		// 参数验证
 		if (!isset($username) || empty($username) || null == $username || "" == $username) {
 			$result['errorFlag'] = true;
@@ -88,6 +92,10 @@ class AdminController extends WebBaseController {
 		$userInfoDao = new UserInfoDao();
 		
 		$result = $userInfoDao->getUserInfoListByConditions($user, PAGE_SIZE);
+		
+		if (STATUS_NG == $result['resStatus']) {
+			return;
+		}
 		
 		if (isset($result) && !empty($result) && STATUS_OK === $result['resStatus']) {
 				
@@ -152,7 +160,11 @@ class AdminController extends WebBaseController {
 	 * 退出登录
 	 */
 	public function actionSignout() {
-	    
+		if (isset($_SESSION['isLogin'])) {
+			$_SESSION['isLogin'] = false;
+			$_SESSION['username'] = null;
+		}
+	    $this->redirect($this->urls['loginPage']);
 	}
 	
 	/**

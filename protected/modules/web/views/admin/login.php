@@ -1,6 +1,6 @@
     <div class="container">
 
-      <form class="form-signin" action="<?php echo $this->urls['login']; ?>">
+      <form class="form-signin" action="<?php echo $this->urls['login']; ?>" method="POST">
         <h2 class="form-signin-heading"><?php echo $title; ?></h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input name='username' type="text" id="inputEmail" class="form-control" placeholder="账号/邮箱" required autofocus>

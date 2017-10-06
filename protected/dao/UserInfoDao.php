@@ -145,7 +145,7 @@ class UserInfoDao extends BaseDao {
 		
 		if (isset($user->realname) && '' != $user->realname) {
 			$criteria->addCondition('t1.realname like :p2');
-			$conditionParams[':p2'] = $user->realname;
+			$conditionParams[':p2'] = '%'.$user->realname.'%';
 		}
 		
 		$criteria->params = $conditionParams;
