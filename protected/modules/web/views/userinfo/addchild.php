@@ -5,7 +5,7 @@
 
   <div class="container">
 
-    <form class="form-inline" action="<?php echo $this->urls['addChild']; ?>">
+    <form class="form-inline" id="addChildForm" action="<?php echo $this->urls['addChild']; ?>" method="post">
       <input type="hidden" name="parentId" value="<?php echo $parentId; ?>">
       <div class="row topheader">
 
@@ -89,10 +89,10 @@
     }
 
     var birthday = $('#birthday').val();
+
     if (null == birthday || undefined == birthday || '' == birthday) {
       alert('孩子生日不能为空!');
       return;
-
     } else {
 
       var starttime = new Date(birthday);
@@ -101,7 +101,6 @@
       if (starttime.getTime() >= today.getTime()) {
         alert('出生日期大于当前时间，请检查');
         return;
-        
       }
     }
 
@@ -112,7 +111,7 @@
       return;
     }
 
-    $('#myForm').submit();
+    $('#addChildForm').submit();
   }
 </script>
 
