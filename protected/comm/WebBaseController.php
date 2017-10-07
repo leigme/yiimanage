@@ -83,6 +83,7 @@ class WebBaseController extends BaseController {
 		        'upChildPage'=>$this->mCreateUrl('web/userinfo/upchildinfo'),
 		        'upChild'=>$this->mCreateUrl('web/userinfo/upchild'),
 		        'delChild'=>$this->mCreateUrl('web/userinfo/delchild'),
+		        'followPage'=>$this->mCreateUrl('web/follow/index'),
 				'addFollowPage'=>$this->mCreateUrl('web/follow/addfollow'),
 				'addFollow'=>$this->mCreateUrl('web/follow/add'),
 				'upFollowPage'=>$this->mCreateUrl('web/follow/upfollow'),

@@ -99,7 +99,7 @@
                   <td><?php echo $followData['followtime']; ?></td>
                   <td><?php echo $followData['context']; ?></td>
                   <td><?php echo $followData['remark']; ?></td>
-                  <td><a href="<?php echo $this->urls['upFollowPage'].'/id/'.$userId.'/followId/'.$followData['id']; ?>">修改</a> / <a href="">删除</a></td>
+                  <td><a href="<?php echo $this->urls['followPage'].'/followId/'.$followData['id']; ?>">详情</a> / <a href="<?php echo $this->urls['upFollowPage'].'/id/'.$userId.'/followId/'.$followData['id']; ?>">修改</a> / <a href="<?php echo $this->urls['delFollow'].'/id/'.$userId.'/followId/'.$followData['id']; ?>">删除</a></td>
                 </tr>
               </tbody>
               	<?php

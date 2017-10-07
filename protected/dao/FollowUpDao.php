@@ -185,7 +185,7 @@ class FollowUpDao extends BaseDao {
 	
 	public function upFollowUp(FollowUp $followUp) {
 		// 参数验证
-		if (!isset($followUp) || count($followUp)) {
+		if (!isset($followUp)) {
 			return STATUS_NG;
 		}
 	
@@ -210,7 +210,7 @@ class FollowUpDao extends BaseDao {
 		if(isset($followUp->updatetime) && '' !== $followUp->updatetime) {
 			$followUpModel->updatetime = $followUp->updatetime;
 		} else {
-			$followUpModel->UpdateTime = date('Y-m-d H:i:s', time());
+			$followUpModel->updatetime = date('Y-m-d H:i:s', time());
 		}
 	
 		if(isset($followUp->deleteflag) && '' !== $followUp->deleteflag) {

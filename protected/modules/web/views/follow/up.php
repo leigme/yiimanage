@@ -5,8 +5,9 @@
 
   <div class="container">
 
-    <form class="form-inline" id="addFollowForm" action="<?php echo $this->urls['addFollow']; ?>" method="post">
+    <form class="form-inline" id="upFollowForm" action="<?php echo $this->urls['upFollow']; ?>" method="post">
       <input type="hidden" name="userId" value="<?php echo $userId; ?>">
+      <input type="hidden" name="followId" value="<?php echo $followInfo['id']; ?>">
       <div class="row topheader">
 
         <div class="col-md-2"></div>
@@ -17,7 +18,7 @@
            <div class="col-md-6">
              <label for="exampleInputName2">日期 </label>
              <div class="input-group date form_date col-md-10" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-              <input class="form-control" type="text" id="followDate" name="followDate" readonly>
+              <input class="form-control" type="text" id="followDate" name="followDate" value="<?php echo $followInfo['followtime']; ?>" readonly>
               <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
@@ -27,14 +28,14 @@
 	   <div class="row top">
          <div class="col-md-12">
            <label for="exampleInputName2">情况 </label>
-           <textarea id="content" name="content" class="form-control" rows="5" cols="80"></textarea>
+           <textarea id="content" name="content" class="form-control" rows="5" cols="80"><?php echo $followInfo['context']; ?></textarea>
          </div>
        </div><!--row 6 end-->
 
        <div class="row top">
          <div class="col-md-12">
            <label for="exampleInputName2">备注 </label>
-           <textarea id="remark" name="remark" class="form-control" rows="5" cols="80"></textarea>
+           <textarea id="remark" name="remark" class="form-control" rows="5" cols="80"><?php echo $followInfo['remark']; ?></textarea>
          </div>
        </div><!--row 6 end-->
 
@@ -67,13 +68,6 @@
 
   function myClick() {
 
-    var followDate = $('#followDate').val();
-
-    if (null == followDate || undefined == followDate || '' == followDate) {
-      alert('跟进日期不能为空!');
-      return;
-    }
-
     var content = $('#content').val();
 
     if (null == content || undefined == content || '' == content) {
@@ -81,7 +75,7 @@
       return;
     }
 
-    $('#addFollowForm').submit();
+    $('#upFollowForm').submit();
   }
 </script>
 
