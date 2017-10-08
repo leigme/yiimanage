@@ -67,7 +67,7 @@
 		          	<td><?php echo $childInfo['age']; ?></td>
 		          	<td><?php echo $childInfo['sex']; ?></td>
 		          	<td><?php echo $childInfo['remark']; ?></td>
-		          	<td><a href="">修改</a> / <a href="">删除</a></td>
+		          	<td><a href="<?php echo $this->urls['upChildPage'].'/childId/'.$childInfo['id'].'/parentId/'.$userId; ?>">修改 </a> / <a href="<?php echo $this->urls['delChild'].'/childId/'.$childInfo['id'].'/parentId/'.$userId; ?>">删除 </a></td>
 		        </tr>
 	      	</tbody>
 			<?php

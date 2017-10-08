@@ -196,7 +196,28 @@ class UserInfoController extends WebBaseController {
 		
 	}
 	
+	// 参数孩子
 	public function actionDelChild() {
+		// 获取参数
+		$childId = $this->getValue('childId');
+		$parentId = $this->getValue('parentId');
 		
+		// 参数验证
+		if (!isset($childId) || empty($childId) || 0 >= $childId) {
+			return;
+		}		
+		
+		$childInfoDao = new ChildInfoDao();
+		
+		$result = $childInfoDao->delChildInfo($childId);
+		
+		if (!isset($result) || STATUS_NG == $result) {
+			return;
+		}
+		
+		$this->redirect(array(
+				'/web/admin/detail',
+				'id'=>$parentId,
+		));
 	}
 }
